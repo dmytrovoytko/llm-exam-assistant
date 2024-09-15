@@ -1,0 +1,690 @@
+id,question,answer,exam,section
+0,What is semi structured data?,doesn't reside in a relational database but has some structure to e.g. json ecdc,azure-dp-900,simple
+1,2 other examples of semi-structured data excluding json,key-value store and graph databases ecdc,azure-dp-900,simple
+2,What can you use a graph database to do?,Store and query info about complex relationships ecdc,azure-dp-900,simple
+3,What are node and edges in re: to a graph database?,nodes - information about objects edges - infor about the relationship between objects,azure-dp-900,simple
+4,What are 3 examples of unstructured data?,"data, video and audio files",azure-dp-900,simple
+5,Where is structured data typically stored?,SQL Database or Azure SQL database ecdc,azure-dp-900,simple
+6,What is the act of setting up a database called?,Provisioning ecdc,azure-dp-900,simple
+7,Where would you store unstructured data in Azure?,In Azure Blob Storage,azure-dp-900,simple
+8,Give an example of where you would store semi-structured data such as documents?,Azure Cosmos DB ecdc,azure-dp-900,simple
+9,After you have provisioned a service what are the 3 levels of access you would typically give,Read-only Read-Write Owner,azure-dp-900,simple
+10,Describe data ingestion - ecdc,"process of capturing raw data. This could be from devices measuring temperature, financial transactions etc..",azure-dp-900,simple
+11,What is DataTransformation/Data Processing? ecdc?,"after raw data is digested, it might not be fit for processing and certain anomolies might need filtered out, aggregations made etc.",azure-dp-900,simple
+12,What is data querying? ecdc?,"after it has been ingested and transformed, you can query to analyse it and look for trends",azure-dp-900,simple
+13,What is Data Visualisation ecdc?,"To visualise the data , you can use tools such as bar charts, line charts or plot results on geographical maps, pie charts",azure-dp-900,simple
+14,What are one of the issues with a document database?,addo duplicated in the docs for Jay and Franci Adams. this increases storage and makes maintenance more complex. ecdc,azure-dp-900,simple
+15,What is a primary use of a relational database?,Handle transactional processing. ecdc,azure-dp-900,simple
+16,What is a distributed database?,Data is stored against different physical location. It may be heard in multiple computers located in the same physical location. ecdc,azure-dp-900,simple
+17,How does a data update compare between distributed and non-distributed database.?,A data update to a distributed dtabase will take time to apply across multiple locations.,azure-dp-900,simple
+18,How do distributed systems avoid the problem of retaining locks for a long time?,relax the strict isolation requirement of transactions and implement eventual consistency ecdc,azure-dp-900,simple
+19,How does eventual consistency work?,"As an application writes data, each change is recorded by one server than then propagated to the other service in the distributed database system asynchronously. ecdc",azure-dp-900,simple
+20,What does the eventual consistency strategy mean ?,helps to minimize latency and lead to temporary inconsistencies in the data ecdc,azure-dp-900,simple
+21,When it eventual consistency ideal?,"Application doesn't require any ordering guarantees. Examples are counts or shares, likes, or non-threaded comments in a social media system. ecdc",azure-dp-900,simple
+22,What are Analytical workloads typically.?,read-only systems that store vast volumes of business data or business metrics. ecdc,azure-dp-900,simple
+23,What are Analytical workloads used for?,Data analysis and decision making. ecdc,azure-dp-900,simple
+24,How are analytics generated?,"Aggregating the facts presented by the raw data into summaries, trends, and other kinds or Business Information ecdc",azure-dp-900,simple
+25,What can timeframe be based on for Analytics and why is this?,"Snapshot of the data at a given point in time, or in a series or snapshots. People who are higher up in hierarchy dont require all the details of every transaction but want a bigger picture. ecdc",azure-dp-900,simple
+26,What is an example of of analytical information?,"Monthly sales report. A head or sales may not need all the individual transactions, but the report should make it possible to identify trends.",azure-dp-900,simple
+27,What is Data processing?,Conversion of raw data to meaningful information through a process. ecdc,azure-dp-900,simple
+28,What are the ways that data is ingested into your system.?,"processs each data item as it arrives (streaming), or buffer the raw data and process in groups (batch processing)",azure-dp-900,simple
+29,Give an example of batch processing.,The way that credit card companies handle billing. The customer doesn't receive a bill for each separate credit card purchase but one monthly bill for all of that month's purchases. ecdc,azure-dp-900,simple
+30,What are advantages of batch processing?,"- Large volumes of data can be processed at a convenient time - It can be scheduled to run at a time when computers or systems might otherwise be idle, such as overnight, or during off-peak hours",azure-dp-900,simple
+31,What are disadvantages or batch processing?,- The time delay between ingesting the data and getting the results - All of a batch job's input data must be ready before a batch can be processed. This means the data must be carefully checked. Any minor problems can prevent a batch job from running.,azure-dp-900,simple
+32,"In stream processing, how is each new piece of data processed?",Processed when it arrives. Data is inherently a streaming process. ecdc,azure-dp-900,simple
+33,When is streaming data processing beneficial?,"Most scenarios where new, dynamic data is generated on a continual basis.",azure-dp-900,simple
+34,3 examples of streaming data,"- Financial institution tracks changes in stock market in real time, computes value at risk and automatically rebalances portfolio based on stock price movements. - Online gaming company collects player data and analyses the data in real time and offers and incentives and dynamic experiences to engage it's players - Real-estate website that tracks a subset of data from consumers' mobile devices, and makes real-time property recommendataion of properties to visit base on geo-location",azure-dp-900,simple
+35,What is stream processing ideal for and give an example.?,Time critical operations that require instant real-time response e.g. a system that monitors a building for smoke and heat and unlocks doors.,azure-dp-900,simple
+36,Batch vs Streaming processing - Data Scope:,"Batch can processs all the data in the dataset. Stream typically only has access to the most recent data received, or within a roling time window (last 30 secs for example)",azure-dp-900,simple
+37,Batch vs Streaming processing - Data Size:,Batch is suitable for handling large datasets efficiently. Stream is intended for individual records or micro batches consisting of few records,azure-dp-900,simple
+38,Batch vs Streaming processing - Data Performance:,"Latency for batch is typically a few hours. Stream typically occurs immediately, with latency in the order of sec or msecs.",azure-dp-900,simple
+39,Batch vs Streaming processing - Analysis:,"Typically for performing complex analytics. Stream processing is used for simple response functions, aggregates, or calcs such as rolling averages",azure-dp-900,simple
+40,What are the 3 roles in world of data?,"Azure DBA, Data Engineer role, Data Analyst role",azure-dp-900,simple
+41,Azure Database Administrator role responsibility,"responsible for the design, implementation, maintenance, and operational aspects of on-premises and cloud-based dataase solutions built on Azure data services and SQL Server.",azure-dp-900,simple
+42,Who does a data engineer collaborate with and to why?,"stakeholders to design and implement data-related assets that include data ingestion piplelines, cleansing and transformation activities, and data sotres for analytical workloads.",azure-dp-900,simple
+43,What technological data platforms does a data engineer use.?,"A wide range, including relational and nonrelational databases, file stores, and data streams",azure-dp-900,simple
+44,Who is responsible for ensuring the privacy of data is maintained within thie cloud and spanning from on-premises to the cloud data stores.?,Data Engineer,azure-dp-900,simple
+45,Which role owns the management and monitoring of data stores and data pipelines to ensure that data loads perform as expected.?,Data Engineer Role,azure-dp-900,simple
+46,What does a data analyst enable businesses to do?,maximise the value of their data assets,azure-dp-900,simple
+47,What is the Data Analyst role responsible for?,"Designing and building scalable models, cleaning and transforming the data, and enabling advanced analytics capabilities through reports and visualizations",azure-dp-900,simple
+48,What does a data analyst process?,Raw data into relevant insights based on identified business requirements to deliver relevant insights,azure-dp-900,simple
+49,Database Admin tasks and responsibilities,"Installing and upgrading the database server and application tools., Allocating system storage and planning storage requirements for the database system., Modifying the database structure, as necessary, from information given by application developers., Enrolling users and maintaining system security., Ensuring compliance with database vendor license agreement., Controlling and monitoring user access to the database., Monitoring and optimizing the performance of the database., Planning for backup and recovery of database information., Maintaining archived data., Backing up and restoring databases., Contacting database vendor for technical support., Generating various reports by querying from database as per need., Managing and monitoring data replication., Acting as liaison with users",azure-dp-900,simple
+50,What is Azure Data Studio?,provides a graphical user interface for managing many different database systems,azure-dp-900,simple
+51,Whats does Azure SQL database provide?,Database services in Azure. Its similar to SQL Server except in runs in the cloud.,azure-dp-900,simple
+52,What can you use an Azure portal to do?,manage and adjust resources such as data storage size and number or cores. If you were running on-prem you would need a sysadmin?,azure-dp-900,simple
+53,What are data engineers tasks with?,"managing and organizing data, while also monitoring for trents or inconsistencies that will impact business goals 1-2.3",azure-dp-900,simple
+54,What kind of experience do Data Engineers need?,"programming, maths, computer science as well as soft skills to communicate data trends",azure-dp-900,simple
+55,What are data Engineer tasks and responsibilities?,"Aligning the data architecture with business requirements., Data acquisition., Developing processes for creating and retrieving information from data sets., Using programming languages and tools to examine the data., Identifying ways to improve data reliability, efficiency, and quality., Conducting research for industry and business questions., Deploying sophisticated analytics programs, machine learning, and statistical methods., Preparing data for predictive and prescriptive modeling., Using data to discover tasks that can be automated.",azure-dp-900,simple
+56,"As well as SSMS and SQLCMD, what additional technologies might you use to generate and test predictive models. ?",Azure Databricks and Azure HDInsight,azure-dp-900,simple
+57,"Using a data engineer and working in a non-relational field, what might you use as your primary data source",Azure Cosmos DB,azure-dp-900,simple
+58,What languages might you use to query data in Azure Cosmos DB?,"HiveQL, R or Python",azure-dp-900,simple
+59,What does a Data Analyst do?,Responsible for understanding what data actually means?,azure-dp-900,simple
+60,What will a skilled data analyst do with the data?,"explore the data and use it to determine trends, issues, and gain other insights that might be of benefit to the company",azure-dp-900,simple
+61,What is a large part of the data analyst role concerned with?,Communication and visualization.,azure-dp-900,simple
+62,What is Data visualisation key to doing?,"Presenting large amounts of information in ways that are universally understandable or easy to interpret or spot patterns, trends, and correlations",azure-dp-900,simple
+63,What do Data analysts use visualization tools to do?,"Create charts, graphs, infographics to communicate info to clients.",azure-dp-900,simple
+64,What does a good data analyst require experience and skills in?,Reporting tools such as Power BI an dSQL Server Reporting Services,azure-dp-900,simple
+65,What are Data Analyst tasks and responsibilities?,"Making large or complex data more accessible, understandable, and usable., Creating charts and graphs, histograms, geographical maps, and other visual models that help to explain the meaning of large volumes of data, and isolate areas of interest., Transforming, improving, and integrating data from many sources, depending on the business requirements., Combining the data result sets across multiple sources. For example, combining sales data and weather data provides a useful insight into how weather influenced sales of certain products such as ice creams., Finding hidden patterns using data., Delivering information in a useful and appealing way to users by creating rich graphical dashboards and reports.",azure-dp-900,simple
+66,What is Power BI a collection of and what does it do?,"collection of software services, apps, and connectors that work together to turn your unrelated sources of data into coherent, visually immersive, and interactive insights.",azure-dp-900,simple
+67,Where can data for PowerBI be located?,"Excel, a collection of cloud-based and on-premisese databases, or some other set of data sources.",azure-dp-900,simple
+68,What does Power BI allow you to do?,"Easily connect to your data sources, discover what's important in that data, and share your findings with others in the organization",azure-dp-900,simple
+69,What kind of structures do real world databse have?,highly variable structures e.g. a customer might have many phone numbers,azure-dp-900,simple
+70,What is a key aspect of non-relational databases?,Store data in a very flexible manner. Non-relational database don't impose a schema on data,azure-dp-900,simple
+71,In a non-relational system how do you store the information for entities?,in collection or containers rather than relational tables.,azure-dp-900,simple
+72,Do 2 entities in the same collation need to have the same set of fields?,"No , they can have a different set of fields rather than a regular set of columns found in a relational table.",azure-dp-900,simple
+73,"Since there is a lack of a fixed scheam in a non-relational database, what does this mean for each entity?",It must be self-describing. Often this is achieved by labelling each field with the name of the data it represents.,azure-dp-900,simple
+74,Give an example of a non-relational collection of customer entities?,"## Customer 1
+ID: 1
+Name: Mark Hanson
+Telephone: [ Home: 1-999-9999999, Business: 1-888-8888888, Cell: 1-777-7777777 ]
+Address: [ Home: 121 Main Street, Some City, NY, 10110,
+ Business: 87 Big Building, Some City, NY, 10111 ] 
+
+## Customer 2
+ID: 2
+Title: Mr
+Name: Jeff Hay
+Telephone: [ Home: 0044-1999-333333, Mobile: 0044-17545-444444 ]
+Address: [ UK: 86 High Street, Some Town, A County, GL8888, UK,
+ US: 777 7th Street, Another City, CA, 90111 ]",azure-dp-900,simple
+75,How are entities in a collection usually stored?,key-value order,azure-dp-900,simple
+76,What does the simplest type of non-relational database enable?,"An application to either specify the unique key, or a range of keys as a query criteria",azure-dp-900,simple
+77,"In the customers DB, how would the database enable an application.",Query customers by ID only,azure-dp-900,simple
+78,"In a non-relational database, what would filtering data on anything other than the unique key mean?","Scan the entire collection of entities, parsing each entity in turn, and then applying any query criteria to each entity to find matches",azure-dp-900,simple
+79,Do non-relational systesm support indexing?,More advanced ones do e.g. Cosmos DB,azure-dp-900,simple
+80,4 examples of non-relational databases,IoT and telematics Retail and marketing Gaming Web and mobile apps,azure-dp-900,simple
+81,What is semi-structured data?,Data that contains fields,azure-dp-900,simple
+82,Do fields have to be the same for every entity in semi-structured data?,no,azure-dp-900,simple
+83,What is the format of a json document?,"enclosed in curly brackets ({ and }). each filed has a name (a label) followed by a colon, and the value of the field.",azure-dp-900,simple
+84,What are other semi-structured formats apart from json?,"Avro, ORC, and Parquet",azure-dp-900,simple
+85,What is Avro.?,row-based format created by Apache,azure-dp-900,simple
+86,What is ORC?,Optimized Row Columnar format that organises data into columns rather than rows. Developed by HortonWorsk for optimizing read and write operations in Apache Hive.,azure-dp-900,simple
+87,What is hive?,Data warehouse system that supports fast summarization and querying over large datasets?,azure-dp-900,simple
+88,What is Parquet?,Another columnar data format. Created by Cloudera and Twitter. A Parquet file contains row group. Data for each column is stored together in the same row group.,azure-dp-900,simple
+89,What is unstructured data?,Data that doesn't naturally contain fields.,azure-dp-900,simple
+90,What are examples of unstructured data?,"video, audio and other media streams.",azure-dp-900,simple
+91,How would you describe unstructured data?,Amorphous blob of binary data. You can't search for specific elements in this data.,azure-dp-900,simple
+92,How would you describe NoSQL?,"A loose term that simply means non-relational. The is debate about whether it's intended to imply <sup style="""">Not Sql, No Not Only SQL</sup> <sup style="""">1-4-4</sup>",azure-dp-900,simple
+93,What non-relational database support a very of SQL adapted for documents?,Azure Cosmos DB,azure-dp-900,simple
+94,What are the 4 catagories of non-relational databases?,-key-value stores -document databases -column family databases -graph databases,azure-dp-900,simple
+95,What is a key-value store?,"Simplest and quickest type of NoSQL database for inserting and querying data.. Each data item in a key-value store has two elements, a key and a value.",azure-dp-900,simple
+96,"In a key-value store, how are write operations restricted?",inserts and deletes,azure-dp-900,simple
+97,What is the focus of a key-value store?,"Ability to read and write data very quickly. Search capabilities are secondary. A key-value store is an excellent choice for data ingestion, when a large volume of data arrives as a continual stream and must be stored immediately.",azure-dp-900,simple
+98,What is Azure Table storage?,An example of a key-value store? Cosmos DB also implements a key-value store using the Table API,azure-dp-900,simple
+99,how is a document DB composed?,"Each do had a unique id, but the fields in the documents are transparent to the database management system.",azure-dp-900,simple
+100,How do document databases typically store data?,"JSON typically, but they could be encoded using other formats such as XML, YAML, BSON.",azure-dp-900,simple
+101,How does having fields in the document database exposed?,Enable an application to query and filter data by using the values in these fields.,azure-dp-900,simple
+102,What does a document for an entity typically contain?,The entire data for an entity.,azure-dp-900,simple
+103,What could a single document contain?,info that would be spread across several relational tables in an RDBMS.,azure-dp-900,simple
+104,Does a document store need need docs to have the same structure?,No. The free-form approach provides a great deal of flexibility. Apps can store different data in docs as business requirements change.,azure-dp-900,simple
+105,"In a document database, how can an app retrieve a doc?",Using a document key,azure-dp-900,simple
+106,"Althoug some document database management systems support in-place updates, what does Cosmos DB do?","Can only read and write entire docs. This approach helps to reduce fragmentation in the db, which can, in turn, improve performance",azure-dp-900,simple
+107,Do document dbs ingest large volumes of data more quickly or more slowly than a relational database?,Yes. The focus of a doc database is it's query capabilities.,azure-dp-900,simple
+108,What is a column family database?,organises data into rows and columns.,azure-dp-900,simple
+109,Although a column family database can appear very similar to a relational database where is it's real power?,It's denormalized approach to structuring sparse data.,azure-dp-900,simple
+110,When should you use column families?,To optimize the most common queries that your application performs,azure-dp-900,simple
+111,What is the read impact for for column databases vs relational?,Can fetch the data with fewer reads.,azure-dp-900,simple
+112,"In column family databases, how are teh column-families store?","Stored separately. e.g. the CustomerInfo column family might be held in one are of physical storage and the addressInfo column family in another, in a simple form or vertical partitioning.",azure-dp-900,simple
+113,How is the data for a single entity configured?,A single entity that spans multiple column-families will have the same row key in each column family. Conceptual visualisation,azure-dp-900,simple
+114,What is the most widely used column family database?,Apache Cassandra. Azure Cosmos DB supports the column-family approache through the cassandra API,azure-dp-900,simple
+115,What does a graph database do?,"Store entities, but the main focus is on the relationships that these entities have with each other",azure-dp-900,simple
+116,What 2 types of info do graph databases store?,nodes and edges,azure-dp-900,simple
+117,What does properties for nodes and edges?,Provide information about that node or edge (like columns in a table).,azure-dp-900,simple
+118,What does edges have?,A direction indicating the nature of the relationship,azure-dp-900,simple
+119,What is the purpose of a graph database?,"Enable an app to efficiently perform queries that traverse the network of the nodes and edges, and to analyze the relationships between entities.",azure-dp-900,simple
+121,What does having a graph database make straightforward?,"Contact inquiries - ""Find all employess who directly or indirectly work for Sarah""",azure-dp-900,simple
+122,"For large graphs with lots of entities and relationships, what does graph database allow you to do?",Perform very complex analyses very quickly.,azure-dp-900,simple
+123,"Although you can store the same info in a relational database compared with a graph database, what is the issue?",The SQL required might require many expensive recursive join operations and nested subqueries.,azure-dp-900,simple
+124,What API does Azure Cosmos DB graph db use?,Gremlin API,azure-dp-900,simple
+125,What is data analytics concerned with?,"Taking the data that your organization produces and using it to establish a picture of how your organization is performing, and what you can do to maintain business performance.",azure-dp-900,simple
+126,What do Data Analytics help you to do?,"Identify strengths and weaknesses in your organisation, and enable you to make appropriate business decisions",azure-dp-900,simple
+127,What does building a data warehouse require you to do?,capture the data that you need and wrangle it into an appropriate format,azure-dp-900,simple
+128,What is the process of Wrangling?,"transform and map raw data into a more useful format for analysis. it can involve writing code to capture, filter, clean, combine, and aggregate data from many sources.",azure-dp-900,simple
+130,What is Data ingestion?,process of obtaining and importing data for immediate use or storage in a database.,azure-dp-900,simple
+131,How can data arrive for data ingestion?,"in a continuous strea, or in batches",azure-dp-900,simple
+132,What might the ingestion process also perform?,"Filtering.e.g. ingestion might reject suspicious, corrupt or duplicated data",azure-dp-900,simple
+133,When data ingestion should you perform transformations?,It is possible e.g. converting data into a standard form for later processing. All transformations must be quick to perform. Don't attempt to run any complex calcs or aggregations on the data at this stage.,azure-dp-900,simple
+134,When does the Data Processing stage occur?,After the data has been ingested and collected.,azure-dp-900,simple
+135,What does data processing do?,"Takes data in it's raw form, cleans it, and converts it into a more meaningful formt (tables, graphs, documents, and so on)",azure-dp-900,simple
+136,What is the result of data processing?,"database of data that you can use to perform queries and generate visualizations, giving it the form and context ncessary to be interpreted by computers and used by employees throughout an organization.",azure-dp-900,simple
+137,What is data cleaning?,"Generalized term that encompasses a range of actions, such as removing anomolies, and applying filters and transformations that would be too time-consuming to run during the ingestion stage",azure-dp-900,simple
+138,What is the aim of data processing?,Convert the raw data into one of more business models,azure-dp-900,simple
+139,What does the business model describe?,"Data in terms of meaningful business entities, and may aggregate items together and summarise info.",azure-dp-900,simple
+140,What can the data processing stage generate?,predictive or other analytical models from the data,azure-dp-900,simple
+141,What tools can data processing involve?,"Azure Functions, Azure Databricks, Azure cognitive services",azure-dp-900,simple
+142,Why is ELT a scalable solution for the cloud?,it can make use of the extensive processing power available.,azure-dp-900,simple
+143,How can ETL help with data privacy and compliance?,it can remove sensitive data before it arrives in your analytical data models,azure-dp-900,simple
+144,What is Azure Data Factory?,cloud-based data integration service that allow you to create data-driven workflows for orchestrating data movement and transforming at scale.,azure-dp-900,simple
+145,"Using Azure Data Factory, what can you create and schedule?",data-driven workloads (called pipelines) for orchestrating data movement and transforming data at scale.,azure-dp-900,simple
+146,What is data visualisation?,graphical representation of information and data,azure-dp-900,simple
+147,"By using visual elements like charts, graphs, and maps, what do data visualisation tools provide?","An accessible way to spot and understand trends, outliers and patterns in data.",azure-dp-900,simple
+148,What can you do using Power BI?,"Connect to multiple different sources of data and combine them into a data model. This data lets you build visuals, and collections of visuals you can share as reports",azure-dp-900,simple
+149,What does data visualisation help you focus on?,"The meaning of data, rather than the data itself. A good data visualisation enables you to quickly spot trends, anomolies, and potential issues.",azure-dp-900,simple
+150,What are the common forms of data visualisations?,- Bar and column charts - Line charts - Matrix - Key influencers - Treemap - Scatter - Filled map,azure-dp-900,simple
+151,What is a key influencer?,displays the major contributors to a selected result or value,azure-dp-900,simple
+152,What are Treemaps?,"colored rectangles, with size representing the relative value of each item. they can be hierarchical, with rectangles nested within the main rectangles",azure-dp-900,simple
+153,What does a Scatter chart show?,"Relationship between 2 numerical values. A bubble chart is a scatter scart that replaces data points with bubbles, with the bubble size representing the additional third dimension.",azure-dp-900,simple
+154,What are the 5 categories for data analytics?,"descriptive, diagnostic, predictive, prescriptive, and cognitive analytics",azure-dp-900,simple
+155,What does descriptive analytics help answer?,questions about what has happened based on historical data.,azure-dp-900,simple
+156,What do descriptive analytics techniques summarise?,large datasets to describe outcomes to stakeholders,azure-dp-900,simple
+157,"In descriptive analytics, by developing KPIs, what does these strategies help track?",success of failure of key objectives. Metrics such are ROI are used in many industries.,azure-dp-900,simple
+158,Give an example of descriptive analytics?,Generating reports to provide a view of an organization's sales and financial data.,azure-dp-900,simple
+159,What are the 3 steps in Diagnostic analytics|?,1. Identify anomalies in the data. 2. collect data that is related to these anomolies 3.Use statistical techniques to discover relationships and trends that explain these anomalies,azure-dp-900,simple
+160,How do predictive analytics work?,"Answer questions about what actionvs should be taken to achieve a goal or target. By using insights from predictive analytics, data-driven decisions can be made.",azure-dp-900,simple
+161,How do Cognitive Analytics work?,"draw inferences from existing data and patterns, derive conclusions based on existing knowledge bases, and then add these findings back into the knowledge base for future instances -- a self-learning feedback loop",azure-dp-900,simple
+162,What might cognitive analytics help you to learn?,"What might hapen if circumstances change, and how you might handle these situations.",azure-dp-900,simple
+163,What concept does effect cognitive analytics depend on?,"Machine learning algorithms using several NLP concepts to make sense of previously untapped data sources, such as call center conversation logs and product reviews",azure-dp-900,simple
+164,"By tapping the benefits of massive parallel/distributed computing and falling costs of data storage and computing power, what does this mean?",No limit to the cognitive development that these systems can achieve,azure-dp-900,simple
+165,What category does Azure Data Services fall into?,Fall into the PaaS category,azure-dp-900,simple
+166,What is the simple reason to use Azure Data Services?,Reduces the amount of time that you need to invest to administer a DBMS,azure-dp-900,simple
+167,What are some of the issues with using Azure Data Services?,Limit the range of custom administration tasks that you can perform. e.g. some DBMSs enable to to install custom software on a database.,azure-dp-900,simple
+168,"Apart from reduce administrative workload, what does Azure Data Services ensure?",available for 99.9% of the time,azure-dp-900,simple
+169,What are the 3 options for Azure SQL Database?,"Single Database, Elastic Pool and Managed Instance",azure-dp-900,simple
+170,What is an elastic pool?,"Similar to Single Databse, but multiple databases can share the resources.",azure-dp-900,simple
+171,When is an elastic pool useful?,"DBs with resource requirements that vary over time, and can help you reduce costs",azure-dp-900,simple
+172,What is the use cases for Azure SQL Database?,best option for low cost with minimal administration. Not full compatible with on-premises SQL Server. Best used in new cloud projects,azure-dp-900,simple
+173,What 3 uses is Azure SQL database used for?,"1- Modern cloud apps that need to use the latest stable SQL Server features 2-Apps that require high availability 3-Systems with a variable load, that need the db server to scale up and down quickly",azure-dp-900,simple
+174,Business benefits for Azure SQL Database,"-scalability -HA - 99%, point in time restore - Advanced threat protection -Auditing -Encryption",azure-dp-900,simple
+175,Does single db or elastic pool support linked server?,No,azure-dp-900,simple
+176,What is a good choice if if there are limitations of the Single Database and Elastic Pool?,Azure SQL Database managed instance.,azure-dp-900,simple
+177,"How does Managed instance compare against ""The Single Database"" and ""Elastic Pool"" options.?",The Managed Instance runs a fully controllable instance in the cloud.,azure-dp-900,simple
+178,How comp[atible is SQL Managed Instance vs the latest SQL Server (Enterprise Edition) db engine.?,it is near 100% compatibility with the latest SQL Server version and provide a native vinet implementation.,azure-dp-900,simple
+179,What does SQL Managed Instance allow customers to do with their on-premises apps?,Shift their apps to the cloud with minimal app and db changes,azure-dp-900,simple
+180,What does SQL Managed Instance preserve?,"All PaaS capabilities (automatic patching and version updates, automated backups, HA). these drastically reduce management overhead and TCO",azure-dp-900,simple
+181,What does Azure SQL Database depend on?,"Other Azure services - Azure Storage for backups, Event hubs for telemetry, Azure AD for auto.",azure-dp-900,simple
+182,How are all communications managed for Azure SQL Database?,encrypted and signed using certificates,azure-dp-900,simple
+184,When would you consider using Azure SQL Databse managed instance?,lift-and-shift an on-prem SQL Server instance and all its databases to the cloud without incurring the management overhead of running SQL Server on a virtual machine,azure-dp-900,simple
+185,Give 3 example features of Managed Instance that are not available with the Single Database or Elastic Pool.,"Linked Server, Service Broker, Database mail.",azure-dp-900,simple
+186,What is the DMA?,Data Migration Assistant - analyses your databases on SQL Server and reports any issues that could block migration to a managed instance,azure-dp-900,simple
+187,What does managed instance deployment enable a system administrator to do.?,Spend less time on admin tasks because the SQL Database service either performs them for you or greatly simplifies those tasks.,azure-dp-900,simple
+188,What automated taskes are available for manages instance.?,"software installation and patching, dynamic instance resizing and configuration, backups etc..",azure-dp-900,simple
+189,"As well as Azure SQL Database, what 3 data services are available for Azure Data Services?","PostgreSQL, MySQL, MariaDB.",azure-dp-900,simple
+190,What is MariaDB compatible with?,Offers compatibility with Oracle Database.,azure-dp-900,simple
+191,What is one notable feature of MariaDB?,built in support for temporaral data,azure-dp-900,simple
+192,What type of database is PostgreSQL?,"A hybrid relational-object database. As well as being able to store in relational table, it also enables youto store custom data-types, with their own non-relational properties.",azure-dp-900,simple
+193,What is another key feature of a PostgreSQL Database?,"ability to store and manipulate geometric data, such as lines, circles and polygons",azure-dp-900,simple
+194,Whats does Azure DAtabase for MySQL service include?,HA at no additional cost and scalability as required.,azure-dp-900,simple
+195,What does Azure Databaes for MySQL provide?,"A global datagae that scales up to large database without the need to manage hardware, network components, virtual servers, software patches, and other underlying components",azure-dp-900,simple
+196,What benefits for Azure DB from MySQL?,"HA, perf, scale, secure dta, automatic backups and restores in 35 days, Security",azure-dp-900,simple
+197,What type of pricing does Azure Database for MySQL use?,pay-as-you-go pricing,azure-dp-900,simple
+198,What are benefits for Azure Database for Maria DB?,HA at no additional cost. Perf Scaling Secured protection of sensitive dta Automatic backups and point-in-time-restore for up to 35 days Enterprise-grade security and compliance,azure-dp-900,simple
+199,Are all features of on-premises PostgreSQL available in Azure Database for PostgreSQL?,No. These are mainly concerned with the extensions that users can add a database to perform specialized tasks and interacting with the Operating System.,azure-dp-900,simple
+200,What are the 2 deployment options for Azure PostgreSQL?,Single-server and Hyperscale,azure-dp-900,simple
+201,What does the single-server deployment option for PostgreSQL provide similar benefits to?,Azure Database for MySQL,azure-dp-900,simple
+202,4 tools for provisioning in Azure,- Azure Portal - Azure CLI - Azure Powershell - Azure Resource Manager templates,azure-dp-900,simple
+203,What are ARM templates?,Azure Resource Manager templates,azure-dp-900,simple
+204,What does an ARM template do?,"describes the service (or services) that you want to deploy in a text files, in a format known as JSON",azure-dp-900,simple
+205,What does an example JSON file look like for an ARM template?,"""resources"" : [
+{
+ ""name"" : ""sql-server-dev"" ,
+ ""type"" : ""Microsoft.Sql/servers"" ,
+ ""apiVersion"" : ""2014-04-01-preview"" ,
+ ""location"" : ""[parameters('location')]"" ,
+ ""tags"" : {
+ ""displayName"" : ""SqlServer"" 
+ } ""properties"" : {}
+ }
+] <font color=""#171717""> 2-2-2 </font>",azure-dp-900,simple
+206,How do you send a template to azure.?,"use ""az deployment group create"" command in Azure CLI, or ""New-AzResourceGroupDeployment"" command in Azure powershell",azure-dp-900,simple
+208,What other options does PostgreSQL support?,hyperscale option which support ultra-hight performance workloads.,azure-dp-900,simple
+209,What 3 things does hyperscale deployment option for PostgreSQL support?,"1. Horizontal scaling across multiple machines 2. Query parallelization across these servers 3. Excellent support for multi-tenant apps, real teime operational analytics, and hitgh throughput transactional workloads",azure-dp-900,simple
+210,What is an Azure Private Endpoint?,A newtwork interface that connects you privately and secure;ly to a service powered by Azure Private Link.,azure-dp-900,simple
+211,What is a security principal?,"Object that represents a user, group, service principal, or managed identity that is requesting access to Azure resources",azure-dp-900,simple
+212,"In the Azure portal, what do you use to add roles assignments to a resource?",Access control (IAM) page,azure-dp-900,simple
+213,What does the role assignments tab enable you to do?,Associate a role with a a security principal defining the level of access the role has to the resource.,azure-dp-900,simple
+214,What does Advanced data security implement?,Threat protection and assessment,azure-dp-900,simple
+215,What does Threat protection add?,Security intelligence to your servce. This monitors the service and detects unusual patterns of activity that could be harmful,azure-dp-900,simple
+216,If you conection using a web app running uder Azure App server what will the connection policy do?,It will Redirect by default,azure-dp-900,simple
+217,What does a policy of redirect mean?,"After your applic establishes a connection to the Azure SQL database via the gate, all following requests will go direct rather than via the gateway.",azure-dp-900,simple
+218,"In re: to gates, what happens if you connection subsequently fails?","You app will have to reconnect through the gates, when it might be directed to a different copy of the DB running on another server in the cluster.",azure-dp-900,simple
+219,Provision Azure relational database services - process.,Do the work,azure-dp-900,simple
+220,What type of utility is Azure Data Studio?,Graphical utility for creating and running SQL queries from your desktop.,azure-dp-900,simple
+221,What tools can you use to connect to PostgreSQL database?,gpAdmin graphical user interface and psql command-line utility,azure-dp-900,simple
+222,What does Azure Table storage implement?,NoSQL key-value model,azure-dp-900,simple
+223,How does the noSQL key-value model store the data for an item?,Stored as a set of fields and the item is identified by a unique key.,azure-dp-900,simple
+224,What does an Azure table enable you to store?,semi-structured data.,azure-dp-900,simple
+225,What doe Azure Storage tables have no concept of?,"relationships, stored procs, secondary indexes, or foreign keys",azure-dp-900,simple
+226,How will data normally be stored in Azure table storage?,"Denormalised, with each row holding the entire data for a logical entity.",azure-dp-900,simple
+227,Describe how a table might hold customer info?,"It might store the forename, lastname , or or more telephone numbers, and one or more addresses for each customer. The number of fields can be differetn for each row.",azure-dp-900,simple
+228,How can Azure table storage provide much faster access vs a relational database?,"faster access to the details of a customer because the data is available in a single row, without requiring that you perform joins across relationships",azure-dp-900,simple
+229,"To help ensure fast access, what does Azure Table storage do?",splits a table into partitions,azure-dp-900,simple
+230,"In Azure Table Storage, what is partitioning?","Mechanism for grouping related row, based on a common property or partition key",azure-dp-900,simple
+231,How are rows that share th same partition key stored?,Stored together,azure-dp-900,simple
+232,As well as partitioning helping you to organise data what else does it do?,Improves scalability and performance.,azure-dp-900,simple
+233,"Since partitions are independent from each other, what else does this mean?","Can grow or shrink as rows are added to, or removed from a partition",azure-dp-900,simple
+234,What 2 elements does the key in Azure Table Storage table comprise?,"Partion key that identifies the partition containing the row ,and a row key that is unique to each row in the same partition.",azure-dp-900,simple
+235,How are items in the same partition stored?,In row key order,azure-dp-900,simple
+236,When an app adds a new row to a table for Azure Tale storage what is ensured?,The row is placed in the correct positition in the table,azure-dp-900,simple
+237,Since row is placed in the correct position in the a table what 2 things does this allow?,Enables an app to quickly perform Point queries that identify a single row and Range Queries that fetch a contiguous block or rows in a partition,azure-dp-900,simple
+238,How does a point query work?,"When an anpp retrieves a single row, the part key enables Az to quickly home in on the correct partition, and the row key lets Az identify the row in that partiion. Therefore data retrieval can be very quick",azure-dp-900,simple
+239,What does a range query work in Azure table?,"App searches for a set of rows in a partition, specifying the start and end point of the set as row keys. This can be very quick as long as you have designed your row keys according to the requirments of the queries performed by your app",azure-dp-900,simple
+240,What is the max size for a column in Azure table?,"numeric, string or binary data up to 64kb",azure-dp-900,simple
+241,"Since Azure Table Storage tables are schemaless, what does the mean?",Easy to adapat your data as the needs of your apps evolve,azure-dp-900,simple
+242,What type of flexible datasets does Azure table storage allow?,"Web apps, address books, device info, or other types of metadata.",azure-dp-900,simple
+243,What are the 5 primary advantagesof using Azure Tables Storage table over other ways of storing data?,"It's simpler to scale. It takes the same time to insert data in an empty table, or a table with billions of entries. An Azure storage account can hold up to 500 TB of data., A table can hold unstructured and semi-structured data, There's no need to map and maintain the complex relationships typically required by a normalized relational database., Row insertion is fast, Data retrieval is fast, if you specify the partition and row keys as query criteria",azure-dp-900,simple
+244,What are the disadvantages to storing data in Azure Table Storage tables?,"Consistency needs to be given consideration as transactional updates across multiple entities aren't guaranteed, There's no referential integrity; any relationships between rows need to be maintained externally to the table, It's difficult to filter and sort on non-key data. Queries that search based on non-key fields could result in full table scans,",azure-dp-900,simple
+245,What 3 things is Azure Table Storage an excellent mechanism for?,"-Storing TBs of structure data capable of serving web scale apps -Storing datasets that don't require complex joins, foreign keys or stored procedures that can be denormalized for fast access. - Capturing event logging and perf monitoring data",azure-dp-900,simple
+246,What is an example of s toring TBs of structured data capable of serving web scale applications for Azure Table Storage?,"Examples include product catalogs for eCommerce applications, and customer information, where the data can be quickly identified and ordered by a composite key. In the case of a product catalog, the partition key could be the product category (such as footwear), and the row key identifies the specific product in that category (such as climbing boots).",azure-dp-900,simple
+247,"In an IoT system, what might you use Azure Table Storage to capture?","Capture device sensor data. Each device could have its own partition, and the data could be ordered by the data and time each measurement was captured.",azure-dp-900,simple
+248,Why is Event log and perf info store for Azure Table Storage?,used for Capturing event logging and perf data. It is typically contain data that is structured according to the performance measuire being recorded.,azure-dp-900,simple
+249,How much data is Azure tended to support?,"Very large volumes, up to several hundred TBs in size.",azure-dp-900,simple
+250,"As you add rows to a table, how does Azure Table Storage manage it?",It automatically manages the partitions in a table allocates storage as necessary. you don't need to take any additional steps,azure-dp-900,simple
+251,What kind of HA is provided in a single region for Azure Table Storage?,Guarantees HA in a single region with the data for each table replicated 3 times within an Azure region,azure-dp-900,simple
+252,Can you increase availability in Azure Table Storage?,"Yes, tables can be created in geo-redundant storage but at a cost.",azure-dp-900,simple
+253,How many more times is the data replicated in geo-redundant storage for Azure Table Storage?,A further 3 times,azure-dp-900,simple
+255,What type of service is Azure Blob storage?,"Stores massives amounts of unstructured data, or blobs in the cloud.",azure-dp-900,simple
+256,What are the 3 types of blobs that Azure blobs storage supports?,-Block blobs -Page blobs -Append blobs,azure-dp-900,simple
+257,Describe blob blocks,"-A block blob is handled as a set of blocks. -Each block can vary in size, up to 100 MB. -A block blob can contain up to 50,000 blocks, giving a maximum size of over 4.7 TB.",azure-dp-900,simple
+258,What are blob blocks best used to store?,"discrete, large, binary objects that change infrequently",azure-dp-900,simple
+259,Describe Page Blocks,- A page blob is organized as a collection of fixed size 512-byte pages. - A page blob is optimized to support random read and write operations; - You can fetch and store data for a single page if necessary,azure-dp-900,simple
+260,How much can a page blob hold?,Up to 8TB,azure-dp-900,simple
+261,What does a Azure use page blobs to implement?,Virtual disk storage for virtual machines,azure-dp-900,simple
+262,What is a an Append blob?,"-An append blob is a block blob optimized to support append operations. -You can only add blocks to the end of an append blob; updating or deleting existing blocks isn't supported. Each block can vary in size, up to 4 MB",azure-dp-900,simple
+263,What is the maximum size of an append blob?,just over 195GB,azure-dp-900,simple
+264,"Inside an Azure storage account, where do you create blobs?",Inside containers,azure-dp-900,simple
+265,What does a container provide?,"A convenient way of grouping related blobs together, and you can organize blobs in a hierarchy of folders, similar to files in a file system on disk. You control who can read and write blobs inside a container at the container level. <font color=""#171717"">3-1-3</font>",azure-dp-900,simple
+267,What are the 3 tiers of Blob storage?,-Hot -Cool -Archive,azure-dp-900,simple
+268,Describe the Hot tier?,The Hot tier is the default. You use this tier for blobs that are accessed frequently. The blob data is stored on high-performance media.,azure-dp-900,simple
+269,What is the cool tier?,"This tier has lower performance and incurs reduced storage charges compared to the Hot tier. Use the Cool tier for data that is accessed infrequently. It's common for newly created blobs to be accessed frequently initially, but less so as time passes. In these situations, you can create the blob in the Hot tier, but migrate it to the Cool tier later. You can migrate a blob form the Cool tier back to the Hot tier.",azure-dp-900,simple
+270,Describe the Archive tier.,"The Archive tier. This tier provides the lowest storage cost, but with increased latency. The Archive tier is intended for historical data that mustn't be lost, but is required only rarely. Blobs in the Archive tier are effectively stored in an offline state. Typical reading latency for the Hot and Cool tiers is a few milliseconds, but for the Archive tier, it can take hours for the data to become available.",azure-dp-900,simple
+271,How do you retrieve a blob from the Archive tier?,you must change the access tier to Hot or Cool. The blob will then be rehydrated . You can read the blob only when the rehydration process is complete.,azure-dp-900,simple
+272,What can a lifecycle management policy do?,"automatically move a blob from Hot to Cool, and then to the Archive tier, as it ages and is used less frequently (policy is based on the number of days since modification). A lifecycle management policy can also arrange to delete outdated blobs.",azure-dp-900,simple
+273,Whare the 5 common uses for Azure Block Storage?,"Serving images or documents directly to a browser, in the form of a static website. Visit <a href=""https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website"">Static website hosting in Azure storage</a> for detailed information., Storing files for distributed access, Streaming video and audio, Storing data for backup and restore, disaster recovery, and archiving, Storing data for analysis by an on-premises or Azure-hosted service,",azure-dp-900,simple
+274,What is Azure storage used as the basis for?,Azure Data Lake storage,azure-dp-900,simple
+275,What can you use Azure Data Lake storage to perform?,big data analytics,azure-dp-900,simple
+276,What are the 4 other features of Azure Blob storage?,-Versioning -Soft delete -Snapshots -Change Feed,azure-dp-900,simple
+277,Describe the Versioning feature of Azure Blob storage.,You can maintain and restore earlier versions of a blob,azure-dp-900,simple
+278,What can you do with the Soft delete feature of Azure Blob storage?,"Enables you to recover a blob that has been removed or overwritten, by accident or otherwise",azure-dp-900,simple
+279,What does the Snapshot feature of Azure Blob storage provide?,A snapshot is a read-only version of a blob at a particular point in time.,azure-dp-900,simple
+280,What does the Change Feed feature of Azure Blob Storage provide?,"The change feed for a blob provides an ordered, read-only, record of the updates made to a blob. You can use the change feed to monitor these changes",azure-dp-900,simple
+281,Create and view a blob block using the Azure portal - example,Work through,azure-dp-900,simple
+282,What does Azure File storage enable you to do?,"Create shares in the cloud, and access these file shares from anywhere with and internet connection",azure-dp-900,simple
+283,How does Azure File storage file shares?,Using the SMB 3.0 protocol.,azure-dp-900,simple
+284,What are the limits for Azure File Storage?,100TB in a single account Max file is 1 TiB 2000 concurrent connections per shared file,azure-dp-900,simple
+285,What are the 2 performance tiers for Azure File Storage?,"Standard tier uses hard disk-based hardware Premium tier uses solid-state disks. Premium offers greater throughput, but is charged at a higher rate.",azure-dp-900,simple
+286,4 Use cases for Azure File Storage,1. Migrate existing apps to the cloud 2. Share server data across on-premises and cloud 3. Integrate modern apps with Azure File Storage 4. Simplify hosting HA workload data,azure-dp-900,simple
+287,How does Migrating existing apps to the cloud work?,Azure File Storage enables you to migrate your on-premises file or file share-based apps to azure without having to provision or manage highly available file server virtual machines,azure-dp-900,simple
+288,How does Ingrating modern apps with Azure File storage work?,"Leveraging the modern REST API that Azure File Storage implements in addition to SMB 3.0, you can integrate legacy apps with modern cloud apps, or develop new file or file share-based Apss",azure-dp-900,simple
+289,How dopes Azure File Storage simplify hosting HA workload data?,"Persistant handles enabled in SMB 3.0 increase availability of the file sahre, which makes it possible to host apps such as SQL Server and IIS in Azure with data stored in shared file storage.",azure-dp-900,simple
+290,What is the throughput for Azure.?,"300 MB/Sec, but you can increase capacity by creating a premiums file share.",azure-dp-900,simple
+292,How does Cosmos DB manage data?,Partitioned set of documents,azure-dp-900,simple
+293,What is a document a collection of?,Fields identified by a key,azure-dp-900,simple
+294,What must data can a document hold?,"Up to 2 MB of data, including small binary objects.",azure-dp-900,simple
+295,Whso should you do if you need to store objects larger than 2 mb?,use Azure Blob Storage.,azure-dp-900,simple
+296,What are the 5 APIs that Cosmos DB supports?,-SQL API -Table API -MongoDB API -Cassandra API -Gremlin API,azure-dp-900,simple
+297,Describe the SQL API supported by Cosmos DB,"Provides a SQL-like query language over documents , enable to identify and retrieve documents using SELECT statements",azure-dp-900,simple
+298,What does the Table API work enable you to do?,Use the Azure Table Storage API to store and retrieve doc. The purpose of this interface is to enable you to switch from Table Storage to Cosmos DB without requiring that you modify your existing apps.,azure-dp-900,simple
+299,How can you use MongoDB API?,"Enable the app to run unchanged against a Cosmos DB. You can migrate the data in the MongoDB DB to Cosmos DB running in the cloud, but continue to run your existing apps to access the data.",azure-dp-900,simple
+300,Descriibe the Cassandra API?,It is a column family dbms. This API for Cosmos DB provides a programmatic interface for Cosmos DB. The primary purpose of the Cassandra API is to enable you to quickly migrate Cassandra DBs and apps to Cosmos DB.,azure-dp-900,simple
+301,What does the Gremlin API implement?,A graph database interface to Cosmos DB,azure-dp-900,simple
+302,What is a graph a collection of?,Data objects and directed relationships,azure-dp-900,simple
+303,What does the Gremlin API enable you to do?,"Data is still held as a set of docs in Cosmos DB, but the Gremlin API enables you to perform graph queries over the data.",azure-dp-900,simple
+304,How are documents in Cosmos DB organised?,Into containers,azure-dp-900,simple
+305,What does a partition hold?,A set of docs that share a common partition key,azure-dp-900,simple
+306,How should you select a partition key and why?,Select on that collects all related docs together. This approach helps to reduce the amount of I/O that queries might need to perfrom when retrieving a set of docs for a given entity,azure-dp-900,simple
+307,Give an example of how you would configure a value in a document database for an ecommerce system.,"Customers and the orders they've place, you couild partition the data by customer ID, and store the customer and order details for each customer in the same partition. To find all the info and orders for a customer, you simply need to query that single partition:",azure-dp-900,simple
+309,"Although there is a superficial similarity betwe a Cosmos DB container and a table in Azure Table storage; in both cases, dat is partitioned and documents (rows in a table) are identified by a unique ID withing a partition, where does the similarity change","Unlike Azure Table storage, docs in a Cosmos DB partition aren't sorted by ID, Comos DB maintains a separate index. This index also tracks the value of every other field in each document. this index is created and maintained automatically.",azure-dp-900,simple
+310,What do the indexes in Cosmos DB enable?,"perforom queries that specify criterial referencing any fields in a container, without incurring the need to scan the entire partition to find that data.",azure-dp-900,simple
+311,What level of HA does Cosmos DB give?,99.99%,azure-dp-900,simple
+312,What latency does Cosmos DB guarantee?,less than 10-ms latency for both reads (indexed) and writes at the 99th percentile.,azure-dp-900,simple
+313,What are the 4 suitable scenarios for Cosmos DB?,-IoT and telematics -Retail and Marketing -Gaming -Web and mobile Apps,azure-dp-900,simple
+314,Describe IoT and telematics,Typically ingest large amounts of data in frequent bursts of activity. Cosmos DB can accept an dstore the info very quickly,azure-dp-900,simple
+315,What does Retail and Marketing scenario detail?,Uses Cosmos DB for its own e-commerce platforms that run as part of Windows Store and XBox Live.,azure-dp-900,simple
+316,What does the Gaming Scenario give.?,DB tiers is crucial component of gaming apps.,azure-dp-900,simple
+317,Describe Web and Mobile Pass scenario.,"Azure Cosmos DB is commonly used for these and is well suited for modeling social interations, integrating with third-party services, and for building rich personalized experiences.",azure-dp-900,simple
+318,What is provisioning?,"Act of running series of tasks that a service provider, such as Azure Cosmos DB, performs to create and configure a service",azure-dp-900,simple
+321,Azure CLI to create a cosmos db,az cosmosdb create \ --subscription &lt;your-subscription&gt; \ --resource-group &lt;resource-group-name&gt; \ --name &lt;cosmosdb-account-name&gt; \ --locations regionName=eastus failoverPriority=0 \ --locations regionName=westus failoverPriority=1 \ --enable-multiple-write-locations,azure-dp-900,simple
+322,Powershell to create cosmosdb.,"## Azure PowerShell New-AzCosmosDBAccount ` -ResourceGroupName ""&lt;resource-group-name&gt;"" ` -Name ""&lt;cosmosbd-account-name&gt;"" ` -Location @(""West US"", ""East US"") ` -EnableMultipleWriteLocations",azure-dp-900,simple
+323,How are resources allocated for Azure Cosmos DB.?,"Resources are allocated in terms of the storage space required to hold your databases and containers, and the processing power required to store and retrieve data.",azure-dp-900,simple
+324,What does Azure Cosmos DB use to manage the perf and cost of DBs.?,Request Units per Second This measure abstracts the underlying physical resources that need to be provisioned to support the required perf.,azure-dp-900,simple
+325,What does MS giva a measure of approximately 1 RU?,resources required to read a 1-KB document with 10 fields. So a throughput of one RU per second (RU/s) will support an application that reads a single 1-KB document each second.,azure-dp-900,simple
+326,What happens if you specify throughput for a database?,"all the containers in that database share that throughput. If you specify throughput for a container, the container gets that throughput all to itself.",azure-dp-900,simple
+327,What happens if you underprovision (by specifying too few RU/s).?,"Cosmos DB will start throttling performance. Once throttling begins, requests will be asked to retry later when hopefully there are available resources to satisfy it. If an application makes too many attempts to retry a throttled request, the request could be aborted. The minimum throughput you can allocate to a database or container is 400 RU/s. You can increase and decrease the RU/s for a container at any time. Allocating more RU/s increases the cost. However, once you allocate throughput to a database or container, you'll be charged for the resources provisioned, whether you use them or not.",azure-dp-900,simple
+329,Azure CLI to create DB and container.,"## Azure CLI - create a database 
+ az cosmosdb sql database create \
+ --account-name &lt;cosmos-db-account-name&gt; \
+ --name &lt;database-name&gt; \
+ --resource-group &lt;resource-group-name&gt; \
+ --subscription &lt;your-subscription&gt; \
+ --throughput &lt;number-of-RU/s&gt; 
+ ## Azure CLI - create a container 
+ az cosmosdb sql container create \
+ --account-name &lt;cosmos-db-account-name&gt; \
+ --database-name &lt;database-name&gt; \
+ --name &lt;container-name&gt; \
+ --resource-group &lt;resource-group-name&gt; \
+ --partition-key-path &lt;key-field-in-documents&gt;",azure-dp-900,simple
+330,What are the 2 performance settings for storage accounts?,Standard - hard disks Premiums - using solid state. used for DBs,azure-dp-900,simple
+331,What type of account is Data Lake storage available with?,"standard storage account, not premium",azure-dp-900,simple
+332,What are the 5 Azure Storage Account kinds?,-General-purpose v2 -General-purpose v1 -BlockBlobStorage -FileStorage -BlobStorage,azure-dp-900,simple
+333,What is the General-purpose v2 account use.?,"blobs, files, queues, and tables and is recommended for most scenarios that require Azure Storage",azure-dp-900,simple
+334,What is the General-purpose v1 account used for?,"Legacy account used for blobs, files, queues and tables. Use G-P v2 accounts when possible",azure-dp-900,simple
+335,What is the BlockBlobStorage account used for?,"Only available for premium accounts. Use for block blobs and append blobs. Recommended for high transaction rates, or that use smaller objects, or require consistently low storage latency",azure-dp-900,simple
+336,File storage account,Only available for premium accounts. use it to create files-only storage accounts with premium perf characteristics.,azure-dp-900,simple
+337,BlobStorage account,Legacy account type that can only hold blobs. Use general-purpose v2 account when possible.,azure-dp-900,simple
+338,What are the 3 types of replication for Data in an Azure Storage account?,-LRS -GRS -RA-GRS,azure-dp-900,simple
+339,What is RA-GRS?,"Extension of GRS that provides direct read-only access to the data in the secondary location. In contrast, the GRS option doesn't expose the data in the secondary location, and it's only use dto recover from a failure in the primary location.",azure-dp-900,simple
+340,What does RA-GRS replication enable you to store?,"A read-only copy of the data close to the users that are located in a geographically distant location, helping to reduce read latency.",azure-dp-900,simple
+341,"To maintain performance, what is the only sort of replication that premium storage accounts support?",LRS,azure-dp-900,simple
+342,Why is LRS replication the only supported option for premium storage accounts?,Replication is done synchronously to maintain data integrity. Replicating data to a distant region can increase latency to the point at which any advantages of using premium storage are lost.,azure-dp-900,simple
+343,What are the 2 access tiers?,-Hot -Cool,azure-dp-900,simple
+344,How long is data intended for in the cool tier?,30 days,azure-dp-900,simple
+345,Give examples of the usage in the cool tier.,-Short-term backup and DR datasets -Older media content not viewed frequently anymore but is expect to be available immediately when accessed -Large data set that need to be store cost effectively while more data is being gathered for future processsing,azure-dp-900,simple
+346,What is ZRS and what does it do?,Zone Redundant Storage which replicates your data synchronously acress three Azure availability zones in the primary region.,azure-dp-900,simple
+347,Describe each availability zone in ZRS.,"Separate physical location with independent power, cooling, and networking.",azure-dp-900,simple
+349,What is the Azure CLI command to create new storage that supports Data Lake Storage.?,"az storage account create \
+ --name &lt;storage-account-name&gt; \
+ --resource-group &lt;resource-group&gt; \
+ --location &lt;your-location&gt; \
+ --sku &lt;sku&gt; \
+ --kind &lt;kind&gt; \
+ --access-tier &lt;tier&gt; \
+ --enable-hierarchical-namespace true",azure-dp-900,simple
+350,Azure Powershell to create a new storage account.,"New-AzStorageAccount `
+ -Name ""&lt;storage-account-name&gt;"" `
+ -ResourceGroupName ""&lt;resource-group-name&gt;"" `
+ -Location ""&lt;your-location&gt;"" `
+ -SkuName ""&lt;sku&gt;"" `
+ -Kind ""&lt;kind&gt;"" `
+ -AccessTier ""&lt;tier&gt;"" `
+ -EnableHierarchicalNamespace $True",azure-dp-900,simple
+351,What are Blobs store in?,containers,azure-dp-900,simple
+352,What is Azure CLI to create a new blob container.?,"az storage container create \
+ --name &lt;container-name&gt; \
+ --account-name &lt;storage-account-name&gt; \
+ --public-access &lt;access&gt;",azure-dp-900,simple
+353,User Azure Powershell to add a container.,"Get-AzStorageAccount `
+ -ResourceGroupName ""&lt;resource-group&gt;"" `
+ -Name ""&lt;storage-account-name&gt;"" | New-AzStorageContainer `
+ -Name ""&lt;container-name&gt;"" `
+ -Permission &lt;permission&gt;",azure-dp-900,simple
+355,Use Azure CLI to create a file share,"az storage share create \
+ --name &lt;share-name&gt; \
+ --account-name &lt;storage-account-name&gt;",azure-dp-900,simple
+356,User Azure Powershell to create a new file share,"Get-AzStorageAccount `
+ -ResourceGroupName ""&lt;resource-group&gt;"" `
+ -Name ""&lt;storage-account-name&gt;"" | New-AzStorageShare `
+ -Name ""&lt;share-name&gt;""",azure-dp-900,simple
+357,What is the default connectivity for Azure Cosmos DB and Azure Storage?,enable access to the world at large,azure-dp-900,simple
+358,What is Azure Virtual Network a representation of?,Your own network in the cloud.,azure-dp-900,simple
+359,What does a virtual network enable you to connect?,Virtual machines and Azure services together in much the same way you might use a physical network,azure-dp-900,simple
+360,How can you limit or restrict connectivity to virtual networks?,Use the Firewalls and Virtual networks page for the service,azure-dp-900,simple
+361,What is an Azure Private Endpoint ?,A network interfact that connects you privately security to a service powered by Azure Private Link.,azure-dp-900,simple
+362,What does the Private endpoint connections page for a service do?,"Specify which private endpoints, if any are permitted access to your service?",azure-dp-900,simple
+363,What can be used to connect to a service?,An access key,azure-dp-900,simple
+364,What are access keys used to do?,authenticate your apps when making requests to this Azure storage account.,azure-dp-900,simple
+365,What is the better alternative to access keys?,Azure Active Directory,azure-dp-900,simple
+366,How do you add role assignments to a resource in Azure portal.?,Use the Access control (IAM) page.,azure-dp-900,simple
+367,What does Advanced security threat protection add and this is free?,Adds security intelligence and identifies potential security vulnerabilities and recommends actions to mitigate them. There is an extra cost,azure-dp-900,simple
+368,When you replicate Azure Cosmos DB do you specify another region?,The next region is automatically selected.,azure-dp-900,simple
+369,Can you enable multi-region writes in Azure Cosmos DB?,"By default it is disabled, however it can cause conflicts",azure-dp-900,simple
+370,What is the conflict mechanism is multi-region writes is enabled in Cosmos DB?,"The most recent write will overwrite changes made earlier when data is replicated, you can write your own code to apply a different strategy",azure-dp-900,simple
+371,What type of replication is used in Cosmos DB.?,Asynchronous,azure-dp-900,simple
+372,What are the 5 types of consistency available in Cosmos DB?,-Eventual -Consistent Prefix -Session -Bounded Staleness -Strong,azure-dp-900,simple
+373,how does eventual consistency work?,"This option is the least consistent. It's based on the situation just described. Changes won't be lost, they'll appear eventually , but they might not appear immediately. Additionally, if an application makes several changes, some of those changes might be immediately visible, but others might be delayed; changes could appear out of order.",azure-dp-900,simple
+374,How does Consistent Prefix consistency work?,"This option ensures that changes will appear in order, although there may be a delay before they become visible. In this period, applications may see old data.",azure-dp-900,simple
+375,How does Session consistency work in Cosmos DB?,"If an application makes a number of changes, they'll all be visible to that application, and in order. Other applications may see old data, although any changes will appear in order, as they did for the Consistent Prefix option. This form of consistency is sometimes known as read your own writes .",azure-dp-900,simple
+376,How does Bounded Staleness consistency work?,"There's a lag between writing and then reading the updated data. You specify this staleness either as a period of time, or number of previous versions the data will be inconsistent for.",azure-dp-900,simple
+377,How does Strong consistency in Cosmos DB work?,"In this case, all writes are only visible to clients after the changes are confirmed as written successfully to all replicas. This option is unavailable if you need to distribute your data across multiple global regions.",azure-dp-900,simple
+378,How can you change the default consistency for a Cosmos DB?,using the Default consistency page in the Azure portal,azure-dp-900,simple
+379,What can applications do in re: tothe default consistency?,"Override the default consistency level for individual read operations, but they can't increase the consistency above that specified on this page; they can only decrease it.",azure-dp-900,simple
+380,What type of encryption keys can you use in Azure storage?,Microsoft-managed keys Customer-managed keys,azure-dp-900,simple
+381,What can you used Shared Access Signatures (SAS) to do?,"Grant limited rights to resrouces in an Azure storage account for a specified time period. This feature enables applications to access resources such as blobs and files, without requiring that they're authenticated first",azure-dp-900,simple
+382,What type of data should you use Shared Access Signatures (SAS) for?,data that you intend to make publie,azure-dp-900,simple
+383,What is an SAS token and how does it work?,a token that an application can use to connect to the resource. The application appends the token to the URL of the resource. The application can then send requests to read or write data using this URL and token.,azure-dp-900,simple
+384,What kind of level can you create a token to grant?,"grants temporary access to the entire service, containers in the service, or individual objects such as blobs and files.",azure-dp-900,simple
+385,What can you use the Shared access signature page in the Azure portal to do?,"Generate SAS tokens. You specify the permissions (you could provide read-only access to a blob, for example), the period for which the SAS token is valid, and the IP address range of computers allowed to use the SAS token.",azure-dp-900,simple
+386,How is the SAS token encrypted?,using one of the access keys; you specify which key to use (key1 or key2).,azure-dp-900,simple
+389,What is Cosmos DB compatible with?,existing NoSQL systems including MongoDB and Cassandra.,azure-dp-900,simple
+390,How are the fields in a document enclosed between?,Braces { } Each field is prefixed with its name,azure-dp-900,simple
+392,How are documents in Cosmos DB organized?,Into containers,azure-dp-900,simple
+393,How are documents in a container?,Grouped together into partitions. You designate one of the fields in your documents as the partition key.,azure-dp-900,simple
+394,What does the approach of partitioning help to reduce?,The amount of disk read operations that queries use when retrieving a set of documents for a given entity.,azure-dp-900,simple
+395,how would you partition a document database for a an ecommerce systems recording the details of customers and orders they've placed.?,"You could partition the data by customer ID, and store the customer an dorder details for each customer in the same partition.",azure-dp-900,simple
+397,What is the purpose of the Table API interface.?,Enable you to switch Table Storage to Cosmos DB without requiring that you modify your existing apps.,azure-dp-900,simple
+398,What are the 5 operations for uploading data to a Cosmos DB Database?,- Data Explorer - Cosmos DB Data Migration Tool - Azure Data Factory - Create a custom app that imports data using the Cosmos DB BulkExecutor library - Create a custom app using Cosmos DB SQL API client library,azure-dp-900,simple
+399,"If you have to configure Cosmos DB to support Bulk Loading, what should you use and why?",The Data Migration Tool which make use of multiple concurrent threads to batch your data into chunks and load the chunks in parallel. Each thread acts as a separate client connection to the database.,azure-dp-900,simple
+400,During an upload if you have insufficient throughput capacity what error can you get?,HTTP 429 error (Request rate is large),azure-dp-900,simple
+401,If you are planning on performing a large data import what should you do?,Increase the throughput resources available to the rage Cosmos container.,azure-dp-900,simple
+402,What does the SQL API for Cosmos return the results in the form of?,Form of JSON documents,azure-dp-900,simple
+403,What is Azure Blob storage a suitable repository for?,"Holding large binary objects, such as images, video, and audio files.",azure-dp-900,simple
+404,What are the 3 different types of blobs that Azure Supports?,Block Blobs Page Blobs Append Blobs,azure-dp-900,simple
+405,What do you typically use page blobs to implement and why?,Virtual disk storage for Azure Virtual machines. They're optimized to support random read and write operations.,azure-dp-900,simple
+406,What are Append blobs suitable for storing?,"Data that grows in chunks, such as logs or other archive data.",azure-dp-900,simple
+407,What are Blob blocks best for storing and give an example?,"Static data, eg holding the image data held by contoso.",azure-dp-900,simple
+408,"In an Azure storage account, how do you store blobs?",In containers,azure-dp-900,simple
+409,What does a container provide a convenient was of grouping?,"related blobs together, and you can organise blobs in a hierarchy of folders inside a container, similar to files in a file system on a disk.",azure-dp-900,simple
+411,What is the Azure CLI to create a container?,az storage container create \ --name images \ --account-name contosodata \ --resource-group contoso-group \ --public-access blob,azure-dp-900,simple
+412,Azure Powershell to create a container,"Get-AzStorageAccount ` -ResourceGroupName ""contoso-group"" ` -Name ""contosodata"" | New-AzStorageContainer ` -Name ""images"" ` -Permission Blob",azure-dp-900,simple
+413,"Once you have created a container, what can you do?",Upload Blobs,azure-dp-900,simple
+414,Azure CLI to upload a blob.,"az storage blob upload \ --container-name images \ --account-name contosodata \ --file ""\data\racer_black_large.gif"" \ --name ""bikes\racer_black""",azure-dp-900,simple
+415,Azure powershell to upload a blob,"Get-AzStorageAccount ` -ResourceGroupName ""contoso-group"" ` -Name ""contosodata"" | Set-AzStorageBlobContent ` -Container ""images"" ` -File ""\data\racer_black_large.gif"" ` -Blob ""bikes\racer_black""",azure-dp-900,simple
+416,Azure CLI to list a blob,"az storage blob list \ --account-name contosodata \ --container-name ""images""",azure-dp-900,simple
+417,Azure powersehll to view the blobs in a container,"Get-AzStorageAccount `
+ -ResourceGroupName ""contoso-group"" `
+ -Name ""contosodata"" | Get-AzStorageBlob `
+ -Container ""images""",azure-dp-900,simple
+418,What are the 2 commands in Azure CLI to download blobs?,"<a href=""https://docs.microsoft.com/en-us/cli/azure/storage/blob?view=azure-cli-latest#az-storage-blob-download""><code>az storage blob download</code></a> <code><a href=""https://docs.microsoft.com/en-us/cli/azure/storage/blob?view=azure-cli-latest#az-storage-blob-download-batch"">az storage blob download-batch</a></code>",azure-dp-900,simple
+419,Azure CLI for downloading a file,"az storage blob download \ --container-name images \ --account-name contosodata \ --file ""racer_black_large.gif"" \ --name ""bikes\racer_black""",azure-dp-900,simple
+420,"If you enable the soft delete option for blob containers, what does this mean?",The blob is hidden rather than removed.,azure-dp-900,simple
+421,How can you do with the Data protection page under the Blob service?,Enable or disable soft delete in the Azure Portal.,azure-dp-900,simple
+422,"If you remove an Azure Storage container, what automatically happens.?",it audomatically delets all blobs held in that container.,azure-dp-900,simple
+423,What is the Azure CLI to delete a container?,"az storage container delete \ --account-name contosodata \ --name ""images""",azure-dp-900,simple
+424,Deleting a container using Azure Powershell?,"Get-AzStorageAccount ` -ResourceGroupName ""contoso-group"" ` - Name ""contosodata"" | Remove-AzStorageContainer `
+ -Name ""images"" ` -Confirm",azure-dp-900,simple
+425,What can you use Azure File storage to do?,Store shared files. Users can connect to a shared folder (also known as a file share) and read and write files (if they have the appropriate privs) in much the same way bas they would use a folder on a local machine.,azure-dp-900,simple
+426,What two graphical tools can you use to create and manage files share in Azure Storage?,Azure Portal Azure Storage Explorer,azure-dp-900,simple
+427,"If you need to transfer a significant number of files in and out of Azure File storage, what should you use?",The AzCopy utility as it is optimized for transferring large files (and blobs),azure-dp-900,simple
+428,What can AzCopy do in re: to failures?,it can detect them and restart a failed transfer at the point an error occurred - you don't have to repeat the entire operation.,azure-dp-900,simple
+429,Before you can use AzCopy what do you need to generate?,A Shared access signature (SAS) token,azure-dp-900,simple
+430,What does an SAS (Shared access signature) token provide?,"controlled, time-limited, anonymous access to services and resources in a storage account. You don't need to provide any additional credentials",azure-dp-900,simple
+431,What type of situations are SAS tokens useful in?,Where you don't know in advance which users will require access to your resources.,azure-dp-900,simple
+432,What other type of autentication does AzCopy support?,using Azure Active Directory,azure-dp-900,simple
+433,How do you create an SAS token?,"n the page for your storage account, under Settings , select Shared access signature . On the Shared access signature page, under Allowed services , select File . Under Allowed resource types , select Container and Object . Under Permissions , select the privileges that you want to grant to users. Set the start and end time for the SAS token, and specify the IP address range of the computers your users will be using. Select Generate SAS and connection string to create the SAS token. Copy the value in the SAS token field somewhere safe.",azure-dp-900,simple
+434,What other operations does the AzCopy support?,"deleting files and blobs, listing files and blobs and creating new files shares.",azure-dp-900,simple
+435,Example of AzCopy file,"azcopy copy ""myfile.txt"" ""https://&lt;storage-account-name&gt;.file.core.windows.net/&lt;file-share-name&gt;/myfile.txt&lt;SAS-token&gt;""",azure-dp-900,simple
+437,What is the process of combining all local data sources known as?,data warehousing,azure-dp-900,simple
+438,What is the process of analysing streaming data an ddata from the internet known as?,Big Data Analytics,azure-dp-900,simple
+439,What does Azure Synapse Analytics combine?,data warehousing with Big Data Analytics,azure-dp-900,simple
+440,What is the focus of data warehouse?,"Provide answers to complex queries, unlike a traditional relations database.",azure-dp-900,simple
+441,What is the term Big Data use for?,"large quantities of data collecting in escalating volumes, at higher velocities, and in a greater variety of formats then every before.",azure-dp-900,simple
+443,What must any modern warehouse solution must be able to provide access to?,"The streams of raw data, and and the cooked business infor derived from this data.",azure-dp-900,simple
+444,What is Azure Data Factore described as?,A data integration service,azure-dp-900,simple
+445,What is the purpose of Azure Data Factory?,"retrieve data from one or more data sources, and convert it into a format that you process.",azure-dp-900,simple
+446,What does Azure Data factory enable you to do?,"extract the interesting data, and discard the rest",azure-dp-900,simple
+447,"if data might contain dates and times formatted in different ways in different data sources, what can you use Azure Data Factor to do?",Transform these items into a single uniform structure which Azure Data Factory can then write the ingested data store for subsequent processing.,azure-dp-900,simple
+448,How do you define the work deifined by Azure Data Factory?,A pipeline of operations,azure-dp-900,simple
+449,How can Azure Data Factory pipeline run?,"Continuously, as data is received from the various dat sources.",azure-dp-900,simple
+450,How can you create Azure Data Factory pipelines?,"Using a GUI provided by MS, or by writing your own code.",azure-dp-900,simple
+452,What is a data lake?,repository for large quantities for raw data,azure-dp-900,simple
+453,What can you think for a data lake as?,"Starting point for your ingested data, before it's massaged and converted into a formate suitable for performing analytics.",azure-dp-900,simple
+454,What does a data lake hold vs a data warehouse?,"A data lake holds raw data, but a data warehouse holds structured information",azure-dp-900,simple
+455,What does Azure Data Lake Storage combine?,The hierarchical directory structure and file system semantics or traditional file system with security and scalability provided by Azure.,azure-dp-900,simple
+456,What is Azure Data Lake Storage essentially an extension of?,"Azure Blob storage, organized as a near-infinite file system.",azure-dp-900,simple
+457,What 3 characteristics does Azure Data Lake Store have?,-Organize your files int directories and subdirectories for improved file organization. Blob storage can only mimic a directory structure -Supports the POSIX files and directory permissions - Compatible with HDFS,azure-dp-900,simple
+458,"In Azure Data Servioce data ware solution, how is data typically loaded?",Into Azure Data Lake Storage before being processed into a structure that enables efficient analysis in Azure Synapse Analytics,azure-dp-900,simple
+460,What type of enviroment is Azure DataBricks?,"Apache Spark environment running on Azure to provide big data processing, streaming, and machine learning.",azure-dp-900,simple
+461,What is Apache Spark?,highly efficient data processing engine that can consume an dprocess large amounts of data very quickly.,azure-dp-900,simple
+462,What can Spark libraries perform?,"tasks such as SQL processing, aggregations, and to build and train machine learning models using your data.",azure-dp-900,simple
+463,Using the Azure Databricks GUI what can you do?,"define and test your processing step by step, before submitting it as a set of batch tasks.",azure-dp-900,simple
+464,What languages can you create data and query data using?,"R, Python, and Scala",azure-dp-900,simple
+465,What do you write Spark code using?,notebooks,azure-dp-900,simple
+466,What does a notebook contain?,"cells, each of which contains a separate block of code.",azure-dp-900,simple
+467,What can you do using Synapse Analytics?,"ingest data from external sources, such as flat files, Azure Data lake, or other DBMS, and then transfrom and aggregate this data intoe a format suitable for analytics processing",azure-dp-900,simple
+468,What does Azure Synapse Analytics leverage?,MPP architecture which includes a control node and a pool of compute nodes,azure-dp-900,simple
+469,Where does the MPP engine run on and why?,On the control node to optimize and coordinate parallel queries.,azure-dp-900,simple
+470,"When submitting a processing request, what does the Control node do in Azure Synapse Analytics?",it transforms it into smaller requests that run agasint distinct subsets of the data in parallel.,azure-dp-900,simple
+471,What does the Compute node do?,Provide the computational power. The data to be processed is distributed evenly across the nodes. User and apps send processing requests to the control node.,azure-dp-900,simple
+472,Where does the control node send the queries?,"to the compute node, which run the queries over the portion of the data that they bhold.",azure-dp-900,simple
+473,"When each node has finished its processing, where are the results sent?",Back to the control node where they're combined into an overall result.,azure-dp-900,simple
+474,What 2 computational model does Azure Synapse Analytics support?,SQL Pools Spark pools,azure-dp-900,simple
+476,How do you submit queries to Azure Synapse Analytics?,In the form of Transact-SQL statements,azure-dp-900,simple
+477,What can Azure Synapse Analytics receive data from?,A wide variety of sources,azure-dp-900,simple
+478,What technology is used by Azure Synapse Analytics to receive data?,Polybase,azure-dp-900,simple
+479,What does Polybase enable to to retrieve?,"data from relational and non-relational sources, such as delimited text files, Azure Blob Storage and Azure Data Lake Storage.",azure-dp-900,simple
+480,When is the only time you can scale a SQL pool?,When it is not running a Transact-SQL query.,azure-dp-900,simple
+481,"In a spark pool, what are the nodes replaced with?",A spark cluster,azure-dp-900,simple
+482,What do you run Spark jobs comprising code written in.?,"Notebooks, in the same way as Azure Databricks.",azure-dp-900,simple
+483,What languages can you write code for a notebook?,"C#, Python, Scala or Spark SQL",azure-dp-900,simple
+484,"As with a SQL pool, what does the Spark cluster do?",splits the work out into a series of parallel tasks that can be performed concurrently.,azure-dp-900,simple
+485,Where can you save data generated by your notebooks?,In Azure Storage or Data Lake Storage,azure-dp-900,simple
+486,What is Spark optimised for?,"Memory processing. A Spark job can load and cached data into memory and query it repeatedly. In memory computing is much faster than disk-based apps, but requires additional memory resources.",azure-dp-900,simple
+487,What does Spark pool autoscaling allow?,pool scale by adding removing nodes as needed. Autoscaling can occur while processing is active.,azure-dp-900,simple
+488,"Since Azure Synapse Analytics consumes a lot of resources, what shold you do inf you aren't planning any processing for a while?","Pause the service, as this action releases the resources in teh pool to other users, and reduces your costs.",azure-dp-900,simple
+489,What does Azure Analysis Services enable you to build?,Tabular models to support OLAP?,azure-dp-900,simple
+490,With Azure Analysis Services what can you combine data from?,"multiple sources, including Azure SQL DB, Azure Synapse Analytics, Azure Data Lake store, Azure Cosmos DB and many others.",azure-dp-900,simple
+491,What is Azure Analysis Services model?,"A set of queries and expressions thatn retrieve data from various data sources and generate results. The results can be cached in-memory for later user, or they can be calculated dynamicallly, directly from the underlying data sources.",azure-dp-900,simple
+492,"Although Azure Analysis Services has significant overlap with Azure Synapse Analytics, what is it more suited for?",Processing on a smaller scale,azure-dp-900,simple
+493,"Comparing Azure Synapse Analytics vs Azure Analysis services, what is Azure Synapse Analytics use for?","Very high volumes of data (multi-terabyte to petabyte sized datasets)., Very complex queries and aggregations., Data mining, and data exploration., Complex ETL operations. ETL stands for Extract, Transform, and Load, and refers to the way in which you can retrieve raw data from multiple sources, convert this data into a standard format, and store it., Low to mid concurrency (128 users or fewer)",azure-dp-900,simple
+494,When comparing Analysis Services with Synapse Analytics what should Azure Analysis Services better for?,"Smaller volumes of data (a few terabytes)., Multiple sources that can be correlated., High read concurrency (thousands of users)., Detailed analysis, and drilling into data, using functions in Power BI., Rapid dashboard development from tabular data.",azure-dp-900,simple
+495,How can many scenarios benefit from using Synapse Analytics and Analysis Services together?,"If you have large amounts of ingested data that require preprocessing, you can use Synapse Analytics to read this data and manipulate it into a model that contains business information rather than a large amount of raw data. The scalability of Synapse Analytics gives it the ability to process and reduce many terabytes of data down into a smaller, succinct dataset that summarizes and aggregates much of this data. You can then use Analysis Services to perform detailed interrogation of this information, and visualize the results of these inquiries with Power BI.",azure-dp-900,simple
+496,What is the definition of Azure HDInsight?,"Azure HDInsight is a big data processing service, that provides the platform for technologies such as Spark in an Azure environment.",azure-dp-900,simple
+497,What kind of model does HDInsight?,A clustered model that distributes processing across a set of computers.,azure-dp-900,simple
+498,What is the clustered model for HDInsight similar to?,"That used by Synapse Analytics, except that the nodes are running the Spark processing engine rather than Azure SQL Database.",azure-dp-900,simple
+499,What streaming technologies does HDInsight support?,"Apache Kafka, and the Apache Hadoop processing model.",azure-dp-900,simple
+500,What type of framework is Hadoop?,"open source framework that breaks large data processing down into smaller chunks and distributes them across a cluster of servers, similar to the way in which Synapse Analytics operates.",azure-dp-900,simple
+501,What is the definition of Hive?,"SQL-like query facility that you can use with HDInsight cluster to examine data held in a variety of formats. You can use it to create, load, and query external tables, in a manner similar to PolyBase for Azure Synapse Analytics.",azure-dp-900,simple
+503,Definition of Data ingestion?,process used to load data from one or more sources into a data store.,azure-dp-900,simple
+504,What are the 2 methods that Data can be ingested?,Batch processing or Streaming,azure-dp-900,simple
+505,What is the first part of any data warehousing solution.?,Data ingestion,azure-dp-900,simple
+506,"In a big data system, what does data ingestion need to be?","fast enough to capture the large quantities data that may be heading your wayu, and have enough compute power to process this data in a timely manner.",azure-dp-900,simple
+507,What are 4 popular tools used for data loading?,Azure Data Factory PolyBase SQL Server Integration Services Azure Databricks.,azure-dp-900,simple
+508,What is Azure Data Factory and how does it work?,"Data integration and transformation service that allows you to load raw data from many different sources, both on-premises and in the cloud.",azure-dp-900,simple
+509,What can Azure Data Factor do as it ingests the data?,"clean, transform, and restructure the data, before loading it into a repository such as a data warehouse.",azure-dp-900,simple
+510,What does Data Factory contain a series of?,Interconnected systems that provide a complete end-to-end platform for data engineers.,azure-dp-900,simple
+511,What kind of engind does Data Factory provide?,An orchestration engine.,azure-dp-900,simple
+512,What is Orchestration the process of?,"directing and controlling other services, and connecting them togeher, to allow data to flow between them.",azure-dp-900,simple
+513,What does Data Factory use orchestration to do?,combine and automate sequences of tasks that use different services to perform complex operations,azure-dp-900,simple
+514,What are 3 example resources that Azure Data Factory uses?,linked services datasets pipelines,azure-dp-900,simple
+515,What does a linked service provide for Data Factory?,provides the info needed for Data Factory to connect to a source and destination,azure-dp-900,simple
+516,Give an example of a linked service with Data Factory.,"Use and Azure Blob Storage linked service to connect a storage account to Data Factory, or the Azure SQL Database linked service to connect to a SQL Database",azure-dp-900,simple
+517,To create a linked service for Azure Blob Storage what information does you need to provide.,"The name of the Azure subscription that owns the storage account, the name of the storage account , and the info necessary to authenticate against the storage account.",azure-dp-900,simple
+518,What does a dataset in Azure Data Factory represent?,The data taht you want to ingest(input) or store (output),azure-dp-900,simple
+519,What is a pipeline a logical group of?,Activities that together perform a task.,azure-dp-900,simple
+520,What do activities in a pipeline define?,Actions to perform on your data.,azure-dp-900,simple
+522,What does Polybase enable you to run Transact-SQL Queries against?,read data from external data sources.,azure-dp-900,simple
+523,What does PolyBase make external source appear like?,tables in a SQL Database.,azure-dp-900,simple
+524,Give examples of 7 systems that data ca be managed from?,-Hadoop -Spark -Azure Blob Storage Other DBMSs -Cosmos DB -Oracle -Teradata -MongoDB,azure-dp-900,simple
+525,What kind of engine is Spark?,A parallel procesing engine that support large-scale analytics,azure-dp-900,simple
+526,Does Azure SQL Database support PolyBase?,No,azure-dp-900,simple
+528,What utility allows you to run your existing SSIS packages as part of pipeline in the cloud?,Azure Data Factory,azure-dp-900,simple
+529,What is the SSIS Feature Pack for Azure?,"An extension that provides components that connect Azure services, transfer data between Azure and on-premises dta sources, an dprocess data stored in Azure.",azure-dp-900,simple
+531,What is Azure Databricks?,An analytics platform optimized for the Microsoft Azure cloud services platform.,azure-dp-900,simple
+532,What is Databricks based on?,"Spark, and is integrated with Azure to streamline workflows. it provides and interactive workspace that enables collaboration between data scientists, data engineers, and business analysts.",azure-dp-900,simple
+533,What types of storage can Databricks process data in?,"Azure Blob storage, Azure Data Lake Store, Hadoop storage, flat files, SQL Databases, and data warehouses, and Azure services such as Cosmos DB.",azure-dp-900,simple
+534,Can Databricks process streaming data.?,"Yes, for example you could capture data being streamed from sensors and other devices.",azure-dp-900,simple
+535,What are notebooks?,Write and run Spark code.,azure-dp-900,simple
+536,What is the definition of a notebook?,"A program that contains a series of steps (called cells). A notebook can contain cells that read data from one or more data sources, process the data, and write the results out to a data store.",azure-dp-900,simple
+537,What does the scalability for Azure Databricks make it an ideal platform for?,performing complex data ingestion and analytics tasks.,azure-dp-900,simple
+538,What can Azure Data Factory incorporate and what does this mean?,Azure Databricks notebooks into a pipeline. A pipeline can pass parameters to a notebook. These parameters can specify which data to read and analyze.,azure-dp-900,simple
+540,What does the term big data refer to?,Data that is too large or complex for traditional database systems.,azure-dp-900,simple
+541,What doe systems that process big data have to perform?,"Rapid data ingestion and processing; they must have capacity to store the results, and sufficient compute power to perform analytics over these results.",azure-dp-900,simple
+542,"Using Apache Sparek and automated pipelines, what must Synapse Analytics do?","Run parallel processing tasks across massive datasets, and perform big data analytics.",azure-dp-900,simple
+543,What types of service is Azure Synapse Analytics?,"A generalised analytics service which you can use to read data from many sources, process this data, generate various analyses, and save the results",azure-dp-900,simple
+544,What 2 technologies can you use to process data for Azure Synapse Analytics?,Transact-SQL Spark,azure-dp-900,simple
+545,How do you write your analytical code using fopr Spark in Azure Synapse Analytics?,"Using notebooks in a programming language such as C#, Scala, Python or SQL.",azure-dp-900,simple
+546,What do Spark libraries provided with Azure Synapse Analytics enable you to do?,"Read data from external sources, and also write out data in a variety of different formats if you need to save your results for further analysis.",azure-dp-900,simple
+547,What type of architecture does Azure Synapse Analytics use?,A clustered architecture.,azure-dp-900,simple
+548,What is a control node?,"Each cluster has a control node that is used as the entry point to the system. When you run Transact-SQL statements or start Spark jobs from a notebook, the request is sent to the control node.",azure-dp-900,simple
+549,What does the control node run in Azure Spark Analytics?,Runs a parallel processing engine that splits the operation into a set of task that can be run concurrently. Each task performs part of the workload over a subset of the source data. Each task is sent to a compute node to actually do the processing. 4.3.2,azure-dp-900,simple
+550,What does the control node gather for Azure Synapse Analytics?,Gather the results from the compute nodes and combines them into an overall result.,azure-dp-900,simple
+552,What is the definition of Azure Databricks?,An analytics platform optimized for the MS Azure cloud services platform,azure-dp-900,simple
+553,What type of storage can Databrick process?,"many types including Azure Blob Storage, Azure Data Lake Store, Hadoop storage, flat files, databases, and data warehouses.",azure-dp-900,simple
+554,What is the processing engine for Azure DataBricks provided by?,Apache Spark,azure-dp-900,simple
+555,What does Spark do with the work in Azure Databricks?,distributes the work across a cluster of computers and can process its data in parallel with other computers. The strategy helps to reduce the time required to perform the work.,azure-dp-900,simple
+556,"In Azure Databricks, what languages can write Spark application code in?","Python, R, Scala, java and SQL.",azure-dp-900,simple
+557,What do you write Databricks applications using?,A Notebook.,azure-dp-900,simple
+558,What does a notebook contain a series of?,"A series of steps (cells), each of which contains a block of code.",azure-dp-900,simple
+559,Give examples of what notebook cells might contain in databricks?,"one cell might contain the code that connects to a data source, the next cell reads the data from that source and converts it into a model in-memory, the next cell plots a graph, and a final cell saves the data from the in-memory model to a repository.",azure-dp-900,simple
+561,What is Azure HDInsight base on and what is it a collection of?,"It's based on Apache Hadoop, a collection of open-source tools and utilities that enable you to run processing tasks over large amounts of data.",azure-dp-900,simple
+562,What kind of model does HDInsight use?,"A clustered model, similar to that of Synapse Analytics",azure-dp-900,simple
+563,Where does HDInsight store data?,Azure Data Lake storage,azure-dp-900,simple
+564,What frameworks can you use to analyse data in HDInsight?,"Hadoop Map/Reduce, Apache Spark, Apache Hive, Apache Kafka, Apache Storm, R, and more.",azure-dp-900,simple
+565,What framework does the Hadoop Map/Reduce?,"Hadoop Map/Reduce uses a simple framework to split a task over a large dataset into a series of smaller tasks over subsets of the data that can be run in parallel, and the results then combined",azure-dp-900,simple
+566,What has Hadoop Map/Reduce been replaced by?,"Spark, which offers a more advanced set of operations and a simpler interface.",azure-dp-900,simple
+567,How can you write Spark jobs?,"As part of an application, or you can use interactive notebooks.",azure-dp-900,simple
+568,Are the notebooks for HDInsight the same as Azure Databricks?,yes,azure-dp-900,simple
+569,What does Apache Hive provide?,"interactive SQL-like facilities for querying, aggregating, and summarising data.",azure-dp-900,simple
+570,What happens with Apache Hive SQL queries?,"Converted into tasks, and parallelised. Each task can run on a separate node in the HDInsight cluster, and the results are combined before being returned to the user.",azure-dp-900,simple
+571,What types of service is Apache Kafka in in HDInsight?,clustered streaming service that can ingest data in real time,azure-dp-900,simple
+572,How do you define Apache Storm in HDInsight?,"scalable, fault tolerant platform for running real-time data processing applications",azure-dp-900,simple
+573,What can storm process?,high volumes of streaming data using comparitively modest computational requirements,azure-dp-900,simple
+574,What is storm designed for in HDInsight and what can it provide in re: to processing of data?,"Storm is designed for reliability, so that events shouldn't be lost. Storm solutions can also provide guaranteed processing of data, with the ability to replay data that wasn't successfully processed the first time",azure-dp-900,simple
+575,What kind of sources can Stoim interoperate with?,"Storm can interoperate with a variety of event sources, including Azure Event Hubs, Azure IoT Hub, Apache Kafka, and RabbitMQ (a message queuing service).",azure-dp-900,simple
+576,What type of Data stores can Storm` write to and how are they written?,"Storm can also write to data stores such as HDFS, Hive, HBase, Redis, and SQL databases. You write a Storm application using the APIs provided by Apache.",azure-dp-900,simple
+578,What type of services it Azure Data Factory?,"Azure Data Factory is a service that can ingest large amounts of raw, unorganized data from relational and non-relational systems, and convert this data into meaningful information",azure-dp-900,simple
+579,What does Azure Data Factory provide and what can it be used to implement?,"Data Factory provides a scalable and programmable ingestion engine that you can use to implement complex hybrid extract-transform-load (ETL), extract-load-transform (ELT), and data integration projects.",azure-dp-900,simple
+580,"What can Azure Data Factory , create and schedule and for what?","you can create and schedule data-driven workflows (called pipelines) that can ingest data from the disparate data stores used by the gaming company. You can build complex ETL processes that transform data visually with data flows or by using compute services such as Azure HDInsight, Azure Databricks, and Azure SQL Database. You can then publish the transformed data to Azure Synapse Analytics for business intelligence applications to consume.",azure-dp-900,simple
+581,What is a pipeline a logical grouping of?,Logical grouping of activities that performs a unit of work.,azure-dp-900,simple
+582,"In ADF, what do the activities in a pipleline perform and give an example","A pipeline is a logical grouping of activities that performs a unit of work. Together, the activities in a pipeline perform a task. For example, a pipeline might contain a series of activities that ingests raw data from Azure Blob storage, and then runs a Hive query on an HDInsight cluster to partition the data and store the results in a Cosmos DB database.",azure-dp-900,simple
+583,What 3 elements does an Azure Data Lake comprise.?,- Data Lake Store - Data Lake Analytics - HDInsight,azure-dp-900,simple
+584,What does a Data Lake Store provide?,A file system that can store near limitless quantities of data.,azure-dp-900,simple
+585,What types of storeage to Data Lake have?,"hierarchichal organization, but you can hold massive amounts of raw data (blobs) and structure data.",azure-dp-900,simple
+586,How does Azure Data Lake Store provide granular security over data.?,"Using Access Control Lists. An Access Control List specifies which accounts can access which files and folders in the store. If you are more familiar with Linux, you can use POSIX-style permissions to grant read, write, and search access based on file ownership and group membership of users.",azure-dp-900,simple
+587,What type of job is Data Lake Analytics and what does it provide?,"an on-demand analytics job service that you can use to process big data. It provides a framework and set of tools that you use to analyze data held in Microsoft Azure Data Lake Store, and other repositories.",azure-dp-900,simple
+588,What language to define a job as in Data Lake Analytics.?,U-SQL,azure-dp-900,simple
+589,What type of language is U-SQL.?,"This is a hybrid language that takes features from both SQL and C#, and provides declarative and procedural capabilities that you can use to process data.",azure-dp-900,simple
+590,What can U-SQL job output results to?,"a single CSV file, partition the results across multiple files, or can write to other destinations.",azure-dp-900,simple
+591,What does Azure Synapse analytics provide?,a suite of tools to analyze and process an organization's data.,azure-dp-900,simple
+592,What suite of tools does Azure Synapse Analytics incorporate?,"It incorporates SQL technologies, Transact-SQL query capabilities, and open-source Spark tools to enable you to quickly process very large amounts of data.",azure-dp-900,simple
+593,What are the 5 components of Azure Synapse Analytics?,- Synapse SQL pool - Synapse Spark pool - Synapse Pipelines - Synapse Link - Synapse Studio,azure-dp-900,simple
+594,What is the Azure Synapse SQL pool?,"This is a collection of servers running Transact-SQL. Transact-SQL is the dialect of SQL used by Azure SQL Database, and Microsoft SQL Server. You write your data processing logic using Transact-SQL",azure-dp-900,simple
+595,What is the Synapse Spark pool and how do you write your data?,"This is a cluster of servers running Apache Spark to process data. You write your data processing logic using one of the four supported languages: Python, Scala, SQL, and C# (via .NET for Apache Spark).",azure-dp-900,simple
+596,How do Spark pools support Azure Machine Learning?,through integration with the SparkML and Azure ML packages,azure-dp-900,simple
+597,What is an Azure Synapse Pipeline?,Synapse pipeline is a logical grouping of activities that together perform a task. The activities in a pipeline define actions to perform on your data.,azure-dp-900,simple
+598,What does the Azure Synapse Link allow you to do?,Connect to Cosmos DB. You can use it to perform near real-time analytics over teh operational dat stored in a Cosmos database.,azure-dp-900,simple
+599,What is Synapse Studio?,A web user interfact that enables data engineers to access all the Synapse Analytics tools.,azure-dp-900,simple
+600,"When you send Transact-SQL to a control node in SQL Pools, what happens?","The control node splits up the work into queries that operation over a subset of the data, and then sends these smaller queries to the compute nodes.",azure-dp-900,simple
+601,"In SQL pools, what is the data split into?",chunks called distributions,azure-dp-900,simple
+602,What is a distribution in a SQL pool?,the basic unit of storage and processing for parallel queries that run on distributed data. Each of the smaller queries runs on one of the data distributions.,azure-dp-900,simple
+603,"In SQL pools, what does the control and compute nodes use the Data movement Service to do?",move data across the nodes as necessary to run queries in parallel and return accurate results.,azure-dp-900,simple
+604,What does Synapse Analytics use Polybase to do?,make external data look like SQL tables,azure-dp-900,simple
+605,What size of datasets is Azure Synapse Analytics run over?,massive datasets,azure-dp-900,simple
+606,In Azure Synapse Analytics how many nodes can you scale the SQL pool to?,60 nodes,azure-dp-900,simple
+607,"In Azurfe Synapse Analytics, if you don't need a SQL pool for a while what should you do and why?",Pausing releases the resources associated with the pool. You aren't charged for resources until you manually resume the pool.,azure-dp-900,simple
+608,"If you pause a SQL pool, can you instantly run queries if you resume it?","Yes, but it can take several minutes.",azure-dp-900,simple
+610,What are 2 scenarios to use SQL pools in Synapse Analytics?,"Complex reporting. You can use the full power of Transact-SQL to run complex SQL statements that summarize and aggregate data. , Data ingestion. PolyBase enables you to retrieve data from many external sources and convert it into a tabular format. You can reformat this data and save it as tables and materialized views in Azure Synapse.",azure-dp-900,simple
+611,What does Synapse Spare run their clusters on?,Apache Spark rather than Azure SQL database,azure-dp-900,simple
+612,What do you write your Spark pools analytiss jobs using?,Notebooks,azure-dp-900,simple
+613,What is code written in for notebooks?,"Python, Scala, C#, or Spark SQL (this is a different dialect from Transact-SQL). You can combine code written in multiple languages in the same notebook.",azure-dp-900,simple
+614,6 example formats that spark pools allow you to process data in?,"csv, json, xml, parquet, orc, and avro Spark can be extended to support many more formats with external data sources.",azure-dp-900,simple
+615,What doe spark pools provide the basic building blocks for?,performing in-memory cluster computing,azure-dp-900,simple
+616,"Since Spark pools can have autoscaling enabled, what does this mean?","pools scale by adding or removing nodes as needed. Also, Spark pools can be shut down with no loss of data since all the data is stored in Azure Storage or Data Lake Storage.",azure-dp-900,simple
+617,What are the 2 scenarios that Spark pools in Synapse Analytics especially suitable for?,- Data Engineering/Data Preparation - Machine Learning,azure-dp-900,simple
+618,What is the Machine Learning library for Apache Spark?,MLib - a machine learning library built on top of Spark that you can use from a Spark pool in Synapse Analytics.,azure-dp-900,simple
+619,What Data Integration engine does Synapse pipelines use?,"Azure Data Factory . This gives you the power in Synapse Studio to create pipelines that can connect to over 90 sources from flat files, databases, or online services.",azure-dp-900,simple
+621,What is Azure Synapse Link and what does it enable you to do?,a cloud-native hybrid transactional and analytical processing (HTAP) capability that enables you to run near real-time analytics over operational data stored in Azure Cosmos DB.,azure-dp-900,simple
+622,What feature of Cosmos DB does Synapse link use?,Cosmos DB Analytical Store,azure-dp-900,simple
+623,What does Cosmos DB Analytical store contain?,"a copy of the data in a Cosmos DB container, but organized as a column store.",azure-dp-900,simple
+624,What are column stores are a more optimal format for?,"running analytical workloads that need to aggregate data down a column rather than across a row, such as generating sum totals, averages, maximum or minimum values for a column.",azure-dp-900,simple
+625,What does Azure Synapse link enable you to run workloads to do?,"retrieve data directly from Cosmos DB and run analytics workloads using Azure Synapse Analytics. The data doesn't have to go through an ETL (extract, transform, and load) process because the data isn't copied into Synapse Analytics; it remains in the Cosmos DB analytical store.",azure-dp-900,simple
+626,"What can Business analysts, data engineers, and data scientists can now use Synapse Spark pools or Synapse SQL pools to run?","to run near real-time business intelligence, analytics, and machine learning pipelines. You can achieve this without impacting the performance of your transactional workloads on Azure Cosmos DB.",azure-dp-900,simple
+627,Give 5 examples of Synapse link,- Supply chain analytics - Operational reporting - Batch data integration and orchestration - Real-time personalization -IoT Maintenance,azure-dp-900,simple
+628,What can the Synapse use for Supply chain analytics and forecasting?,query operational data directly and use it to build machine learning models. You can use the results generated by these models back into Cosmos DB for near-real-time,azure-dp-900,simple
+629,What can you Synapse analytics for Operational reporting?,use Synapse Analytics to query operational data using Transact-SQL running in a SQL pool. You can publish the results to dashboards using the support provided to familiar tools such as Microsoft Power BI.,azure-dp-900,simple
+630,"For Synapse link, what can you use Batch data integration and orchestration","With supply chains getting more complex, supply chain data platforms need to integrate with a variety of data sources and formats. The Azure Synapse data integration engine allows data engineers to create rich data pipelines without requiring a separate orchestration engine.",azure-dp-900,simple
+631,How can you use Synapse link with Real-time personalization?,ou can build engaging ecommerce solutions that allow retailers to generate personalized recommendations and special offers for customers in real time.,azure-dp-900,simple
+632,How can you use Synapse Link with IoT maintenance?,Industrial IoT innovations have drastically reduced downtimes of machinery and increased overall efficiency across all fields of industry. One such innovation is predictive maintenance analytics for machinery at the edge of the cloud. The historical operational data from IoT device sensors could be used to train predictive models such as anomaly detectors. These anomaly detectors are then deployed back to the edge for real-time monitoring. Looping back allows for continuous retraining of the predictive models.,azure-dp-900,simple
+633,What does Synapse studio enable you to do?,web interface that enables you to create pools and pipelines interactively.,azure-dp-900,simple
+634,What is Power Bi a collection of?,"software services, apps, and connectors that work together to turn your unrelated sources of data into coherent, visually immersive, and interactive insights",azure-dp-900,simple
+635,What 3 elements does Power BI consist of?,"Mcrosoft Windows desktop application called Power BI Desktop , an online SaaS ( Software as a Service ) service called the Power BI service , and mobile Power BI apps that are available on any device",azure-dp-900,simple
+636,What might you view reports and dashboards using?,Power BI service,azure-dp-900,simple
+637,Who might Power BI Desktop be used by and what?,"number-crunching, business-report-creating coworker",azure-dp-900,simple
+638,What is the common flow of work in Power BI.?,"begins in Power BI Desktop , where a report is created. That report is then published to the Power BI service and finally shared, so that users of Power BI Mobile apps can consume the information",azure-dp-900,simple
+639,What is the common flow of activity for Power BI?,"Bring data into Power BI Desktop, and create a report., Publish to the Power BI service, where you can create new visualizations or build dashboards., Share dashboards with others, especially people who are on the go., View and interact with shared dashboards and reports in Power BI Mobile apps.",azure-dp-900,simple
+640,What are the 5 basic building blocks in Power BI?,"Visualizations, Datasets, Reports, Dashboards, Tiles",azure-dp-900,simple
+641,What is a visualization in PowerBI?,"representation of data, like a chart, a color-coded map, or other interesting things you can create to represent your data visually.",azure-dp-900,simple
+642,"For PowerBI datasets, is it from a single source of data?","No, you can create a dataset from three database fields, one website table, an Excel table, and online results of an email marketing campaign. That unique combination is still considered a single dataset , even though it was pulled together from many different sources.",azure-dp-900,simple
+643,"In Power BI, what is a report?","collection of visualizations that appear together on one or more pages. Just like any other report you might create for a sales presentation or write for a school assignment, a report in Power BI is a collection of items that are related to each other.",azure-dp-900,simple
+644,What is a power BI Dashboard?,"collection of visuals from a single page that you can share with others. Often, it's a selected group of visuals that provide quick insight into the data or story you're trying to present.",azure-dp-900,simple
+645,What is a Power BI tile?,"single visualization on a report or a dashboard. It's the rectangular box that holds an individual visual. In the following image, you see one tile, which is also surrounded by other tiles.",azure-dp-900,simple
+647,What is an app?,"collection of preset, ready-made visuals and reports that are shared with an entire organization.",azure-dp-900,simple
+648,"With Power BI, how do you connect to data?",select the Get Data button in the lower-left corner of the home page.,azure-dp-900,simple
+649,What are a collection of visuals called?,An app,azure-dp-900,simple
+652,When picking an element to pivot what should you choose?,An element than can be run through a group by statement that will generate 15 or fewer columns,azure-dp-900,simple
+653,What does a Set Key create in a Pivot transformation?,places all the unique vaules for all rows into this column,azure-dp-900,simple
+654,What does the Term Extraction Transformation do?,mine free-flowing text for English word and phrase frequency,azure-dp-900,simple
+655,What is TFIDF?,"Term Frequency and Inverse Document Frequency, and it is a formula designed to balance the frequency of the distinct words and phrases relative to the total text sampled",azure-dp-900,simple
+656,What are the 2 types of parameters?,project parameters and package parameters,azure-dp-900,simple
+657,What are Project parameter best used for?,"Values that are shared among packages, such as email addresses for error messages.",azure-dp-900,simple
+658,What are Expressions are the key to?,understanding how to create dynamic packages in SSIS,azure-dp-900,simple
