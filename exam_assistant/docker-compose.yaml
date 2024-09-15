@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+  #   container_name: elasticsearch
+  #   environment:
+  #     - discovery.type=single-node
+  #     - xpack.security.enabled=false
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9300"
+  #   mem_limit: 3GB
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    mem_limit: 10GB
+
+volumes:
+  ollama_data:
