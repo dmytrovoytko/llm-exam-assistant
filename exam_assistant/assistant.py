@@ -20,7 +20,7 @@ openai_client = OpenAI(api_key=OPENAI_API_KEY)
 MODEL_NAME = os.getenv("MODEL_NAME") # "phi3.5" # "phi3" # gpt-4o-mini
 
 
-model = SentenceTransformer(INDEX_MODEL_NAME)
+index_model = SentenceTransformer(INDEX_MODEL_NAME)
 
 
 def elastic_search_text(query, course, index_name=INDEX_NAME):
@@ -65,7 +65,7 @@ def elastic_search_knn(field, vector, course, index_name="course-questions"):
 
 def build_prompt(query, search_results):
     prompt_template = """
-You're an exam preparation coach. Answer the QUESTION based on the CONTEXT from the FAQ database.
+You're an exam preparation coach. Answer the QUESTION based on the CONTEXT from our questions database.
 Use only the facts from the CONTEXT when answering the QUESTION.
 
 QUESTION: {question}
@@ -110,14 +110,13 @@ def llm(prompt, model_choice):
     else:
         raise ValueError(f"Unknown model choice: {model_choice}")
     
-    end_time = time.time()
-    response_time = end_time - start_time
+    response_time = time.time() - start_time
     
     return answer, tokens, response_time
 
 
 def evaluate_relevance(question, answer):
-    prompt_template = """
+    evaluation_prompt_template = """
     You are an expert evaluator for a Retrieval-Augmented Generation (RAG) system.
     Your task is to analyze the relevance of the generated answer to the given question.
     Based on the relevance of the generated answer, you will classify it
@@ -137,7 +136,7 @@ def evaluate_relevance(question, answer):
     }}
     """.strip()
 
-    prompt = prompt_template.format(question=question, answer=answer)
+    prompt = evaluation_prompt_template.format(question=question, answer=answer)
     evaluation, tokens, _ = llm(prompt, MODEL_NAME) # 'openai/gpt-4o-mini'
     
     if evaluation.startswith('```json'):
@@ -170,12 +169,12 @@ def evaluate_relevance(question, answer):
             return "UNKNOWN", f"Failed to parse evaluation. {evaluation}", tokens
 
 
-def calculate_openai_cost(model_choice, tokens):
+def calculate_openai_cost(model, tokens):
     openai_cost = 0
 
-    if model_choice == 'openai/gpt-3.5-turbo':
+    if model == 'openai/gpt-3.5-turbo':
         openai_cost = (tokens['prompt_tokens'] * 0.0015 + tokens['completion_tokens'] * 0.002) / 1000
-    elif model_choice in ['openai/gpt-4o', 'openai/gpt-4o-mini']:
+    elif model in ['openai/gpt-4o', 'openai/gpt-4o-mini']:
         openai_cost = (tokens['prompt_tokens'] * 0.03 + tokens['completion_tokens'] * 0.06) / 1000
 
     return openai_cost
@@ -183,7 +182,7 @@ def calculate_openai_cost(model_choice, tokens):
 
 def get_answer(query, course, model_choice, search_type):
     if search_type == 'Vector':
-        vector = model.encode(query)
+        vector = index_model.encode(query)
         search_results = elastic_search_knn('question_text_vector', vector, course)
     else:
         search_results = elastic_search_text(query, course)

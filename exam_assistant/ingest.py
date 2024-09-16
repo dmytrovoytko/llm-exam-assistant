@@ -2,8 +2,11 @@ import os
 import pandas as pd
 from dotenv import load_dotenv
 
-from sentence_transformers import SentenceTransformer
-from elasticsearch import Elasticsearch
+try:
+    from sentence_transformers import SentenceTransformer
+    from elasticsearch import Elasticsearch
+except:
+    pass
 
 import minsearch
 
@@ -14,7 +17,8 @@ USE_ELASTIC = os.getenv("USE_ELASTIC")
 ELASTIC_URL = os.getenv("ELASTIC_URL") # ELASTIC_URL_LOCAL
 INDEX_MODEL_NAME = os.getenv("INDEX_MODEL_NAME", "multi-qa-MiniLM-L6-cos-v1")
 INDEX_NAME = os.getenv("INDEX_NAME")
-DATA_PATH = os.getenv("DATA_PATH", "data/Azure-DP-900.apkg.csv")
+# DATA_PATH = os.getenv("DATA_PATH", "data/Azure-DP-900.apkg.csv")
+DATA_PATH = os.getenv("DATA_PATH", "data/gcp-pde-100.csv")
 BASE_URL = "https://github.com/dmytrovoytko/llm-exam-assistant/blob/main"
 
 def load_index(data_path=DATA_PATH):

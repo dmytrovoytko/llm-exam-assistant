@@ -31,7 +31,9 @@ def search(query, index):
     return results
 
 
-prompt_template = """
+
+def build_prompt(query, search_results):
+    prompt_template = """
 You're an exam preparation coach. Answer the QUESTION based on the CONTEXT from our questions database.
 Use only the facts from the CONTEXT when answering the QUESTION.
 
@@ -42,14 +44,12 @@ CONTEXT:
 """.strip()
 
 
-entry_template = """
-hint: {question} - {answer}
-""".strip()
-# exam: {exam}
-# section: {section}
+    entry_template = """
+    hint: {question} - {answer}
+    """.strip()
+    # exam: {exam}
+    # section: {section}
 
-
-def build_prompt(query, search_results):
     context = ""
 
     for doc in search_results:
@@ -75,28 +75,27 @@ def llm(prompt, model=MODEL_NAME):
     return answer, token_stats
 
 
-evaluation_prompt_template = """
-You are an expert evaluator for a RAG system.
-Your task is to analyze the relevance of the generated answer to the given question.
-Based on the relevance of the generated answer, you will classify it
-as "NON_RELEVANT", "PARTLY_RELEVANT", or "RELEVANT".
-
-Here is the data for evaluation:
-
-Question: {question}
-Generated Answer: {answer}
-
-Please analyze the content and context of the generated answer in relation to the question
-and provide your evaluation in parsable JSON without using code blocks:
-
-{{
-  "Relevance": "NON_RELEVANT" | "PARTLY_RELEVANT" | "RELEVANT",
-  "Explanation": "[Provide a brief explanation for your evaluation]"
-}}
-""".strip()
-
-
 def evaluate_relevance(question, answer):
+    evaluation_prompt_template = """
+    You are an expert evaluator for a RAG system.
+    Your task is to analyze the relevance of the generated answer to the given question.
+    Based on the relevance of the generated answer, you will classify it
+    as "NON_RELEVANT", "PARTLY_RELEVANT", or "RELEVANT".
+
+    Here is the data for evaluation:
+
+    Question: {question}
+    Generated Answer: {answer}
+
+    Please analyze the content and context of the generated answer in relation to the question
+    and provide your evaluation in parsable JSON without using code blocks:
+
+    {{
+      "Relevance": "NON_RELEVANT" | "PARTLY_RELEVANT" | "RELEVANT",
+      "Explanation": "[Provide a brief explanation for your evaluation]"
+    }}
+    """.strip()
+
     prompt = evaluation_prompt_template.format(question=question, answer=answer)
     evaluation, tokens = llm(prompt, model=MODEL_NAME)
     # print('evaluate_relevance', prompt, evaluation)
@@ -108,13 +107,13 @@ def evaluate_relevance(question, answer):
     try:
         json_eval = json.loads(evaluation)
         return json_eval, tokens
-    except json.JSONDecodeError:
+    except: # json.JSONDecodeError:
         print('!! evaluation parsing failed:', evaluation)
-        if find(evaluation, "RELEVANT")>=0:
+        if evaluation.find("RELEVANT")>=0:
             result = {"Relevance": "RELEVANT", "Explanation": evaluation}
-        elif find(evaluation, "PARTLY_RELEVANT")>=0:
+        elif evaluation.find("PARTLY_RELEVANT")>=0:
             result = {"Relevance": "PARTLY_RELEVANT", "Explanation": evaluation}
-        elif find(evaluation, "NON_RELEVANT")>=0:
+        elif evaluation.find("NON_RELEVANT")>=0:
             result = {"Relevance": "NON_RELEVANT", "Explanation": evaluation}
         else:
             result = {"Relevance": "UNKNOWN", "Explanation": f"Failed to parse evaluation. {evaluation}"}
@@ -181,6 +180,12 @@ if __name__ == '__main__':
     index = ingest.load_index()
     took = time() - t0
     print(f'Indexing finished in {took:05.3f} sec')
+
+    question = 'What technique would you try to eliminate overfitting of machine learning models?'
+    answer = rag(question, index, model=MODEL_NAME)
+    print(f'\nQ: {question}\n A: {answer}')
+
+    exit()
 
     question = 'What is the Data Analyst role responsible for?'
     answer = rag(question, index, model=MODEL_NAME)
