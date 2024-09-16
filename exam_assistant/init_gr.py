@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-GRAFANA_URL = "http://localhost:3000"
+GRAFANA_URL = "http://grafana:3000"
 
 GRAFANA_USER = os.getenv("GRAFANA_ADMIN_USER","admin")
 GRAFANA_PASSWORD = os.getenv("GRAFANA_ADMIN_PASSWORD","admin")
