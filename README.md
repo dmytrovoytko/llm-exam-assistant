@@ -55,3 +55,78 @@ Section helps to focus on specific parts of exam.
 - PostgreSQL to store asked questions, answers, evaluation (relevance) and user feedback
 - Grafana to monitor performance
 
+## 🚀 Instructions to reproduce
+
+- [Setup environment](#hammer_and_wrench-setup-environment)
+- [Dataset](#arrow_heading_down-dataset)
+- [Train model](#train-model)
+- [Test prediction service](#test-prediction-service)
+- [Deployment and Monitoring](#deployment-and-monitoring)
+- [Best practices](#best-practices)
+
+### :hammer_and_wrench: Setup environment
+
+1. Fork this repo on GitHub. Or use `git clone https://github.com/dmytrovoytko/llm-exam-assistant.git` command to clone it locally, then `cd llm-exam-assistant`.
+2. Create GitHub CodeSpace from the repo, use 4-core - 16GB RAM machine type.
+3. **Start CodeSpace**
+4. As app works in docker containers, the only package needed to install locally is `dotenv` for setting up Grafana dashboard - run `pip install dotenv` to install required package.
+5. Go to the app directory `cd exam_assistant`
+6. If you want to play with/develop the project locally, you can run `pip install -r requirements.txt` (project tested on python 3.11/3.12).
+6. If you want to use gpt-3.5/gpt-4 API you need to correct OPENAI_API_KEY in `.env` file. 
+
+### :arrow_forward: Start the app
+
+1. Run `bash deploy.sh` to start all containers - elasticsearch, ollama, postgres, streamlit, grafana. It takes at least couple of minutes to download/build corresponding images, then get services ready to serve. When new log messages stop to apper, press enter to return to command line. 
+2. Run `bash init_db.sh` to create PostgreSQL tables.
+![init_db](/screenshots/init_db.png)
+
+3. Run `bash init_es.sh` to ingest and index question database.
+![init_es](/screenshots/init_es.png)
+
+4. Run `bash ollama_pull.sh` to pull phi3/phi3.5 Ollama models.
+![Ollama pull](/screenshots/ollama_pulled.png)
+
+5. Finally, open streamlit app: switch to ports tab and click on link with port 8501.
+
+![Ports streamlit open](/screenshots/streamlit-open.png)
+
+### :arrow_heading_down: Interact with the app
+
+1. Set query parameters
+2. Ask question, wait for response. For Ollama Phi3 in CodeSpace response time is around a minute.
+![streamlit ask](/screenshots/streamlit-00.png)
+
+3. Check relevance evaluated by LLM.
+![streamlit check](/screenshots/streamlit-02.png)
+
+4. Give your feedback by pressing 👍 or 👎
+
+5. You can switch to wide mode in streamlit settings (upper right corner)
+![streamlit check](/screenshots/streamlit-03.png)
+
+### Monitoring
+
+You can monitor app performance in Grafana dashboard
+
+![Grafana dasboard](/screenshots/grafana.png)
+
+### Best practices
+
+
+## Next steps
+
+I plan to add more questions to knowledge database and test more models.
+
+Stay tuned!
+
+## Support
+
+🙏 Thank you for your attention and time!
+
+- If you experience any issue while following this instruction (or something left unclear), please add it to [Issues](/issues), I'll be glad to help/fix. And your feedback, questions & suggestions are welcome as well!
+- Feel free to fork and submit pull requests.
+
+If you find this project helpful, please ⭐️star⭐️ my repo 
+https://github.com/dmytrovoytko/llm-exam-assistant to help other people discover it 🙏
+
+Made with ❤️ in Ukraine 🇺🇦 Dmytro Voytko
