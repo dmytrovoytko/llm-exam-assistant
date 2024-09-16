@@ -47,7 +47,9 @@ Section helps to focus on specific parts of exam.
 
 - Elastic search to index question bank
 - OpenAI-compatible API, that supports working with Ollama locally, even without GPU
-- Ollama tested with Microsoft Phi 3/3.5 model
+    * Ollama tested with Microsoft Phi 3/3.5 model, performs better than Gemma
+    * You can pull and test any model from [Ollama library](https://ollama.com/library)
+    * with your own OPENAI_API_KEY you can choose gpt-3.5/gpt-4
 - Docker and docker-compose for containerization
 - Streamlit web application for conversational interface
 - PostgreSQL to store asked questions, answers, evaluation (relevance) and user feedback
