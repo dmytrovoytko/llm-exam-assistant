@@ -52,9 +52,23 @@ services:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     ports:
       - "${STREAMLIT_PORT:-8501}:8501"
+    volumes:
+      - ./data:/app/data
     depends_on:
       - elasticsearch
       - ollama
+      - postgres
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+    depends_on:
       - postgres
 
 
@@ -63,3 +77,4 @@ volumes:
   elasticsearch_data:
   ollama_data:
   postgres_data:
+  grafana_data:

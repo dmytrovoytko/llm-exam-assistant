@@ -7,7 +7,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./data ./data
+# COPY ./data ./data
 COPY . .
+
+VOLUME ["/app/data"]
+
 
 CMD ["streamlit", "run", "sl-app.py"]
