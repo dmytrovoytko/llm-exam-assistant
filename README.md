@@ -107,11 +107,11 @@ Section helps to focus on specific parts of exam.
 
 You can monitor app performance in Grafana dashboard
 
-1. Create dashboard by running `bash init_gr.sh`.
+1. Run `bash init_gr.sh` to create dashboard.
 2. As with streamlit switch to ports tab and click on link with port 3000 (🌐 icon).
 - Login: "admin"
 - Password: "admin"
-3. Click 'Dashboards' and choose 'Exam Assistant'
+3. Click 'Dashboards' in left pane and choose 'Exam Assistant'.
 
 ![Grafana dasboard](/screenshots/grafana.png)
 
