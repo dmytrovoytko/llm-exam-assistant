@@ -76,6 +76,8 @@ Section helps to focus on specific parts of exam.
 ### :arrow_forward: Start the app
 
 1. Run `bash deploy.sh` to start all containers - elasticsearch, ollama, postgres, streamlit, grafana. It takes at least couple of minutes to download/build corresponding images, then get services ready to serve. When new log messages stop appering, press enter to return to command line. 
+![docker-compose up](/screenshots/docker-compose.png)
+
 2. Run `bash init_db.sh` to create PostgreSQL tables.
 ![init_db](/screenshots/init_db.png)
 
@@ -108,9 +110,14 @@ Section helps to focus on specific parts of exam.
 You can monitor app performance in Grafana dashboard
 
 1. Run `bash init_gr.sh` to create dashboard.
+![Grafana init_gr](/screenshots/init_gr.png)
+
 2. As with streamlit switch to ports tab and click on link with port 3000 (🌐 icon).
 - Login: "admin"
 - Password: "admin"
+
+![Grafana dasboard](/screenshots/grafana-00.png)
+
 3. Click 'Dashboards' in left pane and choose 'Exam Assistant'.
 
 ![Grafana dasboard](/screenshots/grafana.png)
