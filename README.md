@@ -58,10 +58,9 @@ Section helps to focus on specific parts of exam.
 ## 🚀 Instructions to reproduce
 
 - [Setup environment](#hammer_and_wrench-setup-environment)
-- [Dataset](#arrow_heading_down-dataset)
-- [Train model](#train-model)
-- [Test prediction service](#test-prediction-service)
-- [Deployment and Monitoring](#deployment-and-monitoring)
+- [Start the app](#arrow_forward-start-the-app)
+- [Interact with the app](#speech_balloon-interact-with-the-app)
+- [Monitoring](#bar_chart-monitoring)
 - [Best practices](#best-practices)
 
 ### :hammer_and_wrench: Setup environment
@@ -76,7 +75,7 @@ Section helps to focus on specific parts of exam.
 
 ### :arrow_forward: Start the app
 
-1. Run `bash deploy.sh` to start all containers - elasticsearch, ollama, postgres, streamlit, grafana. It takes at least couple of minutes to download/build corresponding images, then get services ready to serve. When new log messages stop to apper, press enter to return to command line. 
+1. Run `bash deploy.sh` to start all containers - elasticsearch, ollama, postgres, streamlit, grafana. It takes at least couple of minutes to download/build corresponding images, then get services ready to serve. When new log messages stop appering, press enter to return to command line. 
 2. Run `bash init_db.sh` to create PostgreSQL tables.
 ![init_db](/screenshots/init_db.png)
 
@@ -86,14 +85,14 @@ Section helps to focus on specific parts of exam.
 4. Run `bash ollama_pull.sh` to pull phi3/phi3.5 Ollama models.
 ![Ollama pull](/screenshots/ollama_pulled.png)
 
-5. Finally, open streamlit app: switch to ports tab and click on link with port 8501.
+5. Finally, open streamlit app: switch to ports tab and click on link with port 8501 (🌐 icon).
 
 ![Ports streamlit open](/screenshots/streamlit-open.png)
 
-### :arrow_heading_down: Interact with the app
+### :speech_balloon: Interact with the app
 
-1. Set query parameters
-2. Ask question, wait for response. For Ollama Phi3 in CodeSpace response time is around a minute.
+1. Set query parameters - choose exam, model, enter question.
+2. Press 'Ask' button, wait for response. For Ollama Phi3 in CodeSpace response time is around a minute.
 ![streamlit ask](/screenshots/streamlit-00.png)
 
 3. Check relevance evaluated by LLM.
@@ -104,14 +103,21 @@ Section helps to focus on specific parts of exam.
 5. You can switch to wide mode in streamlit settings (upper right corner)
 ![streamlit check](/screenshots/streamlit-03.png)
 
-### Monitoring
+### :bar_chart: Monitoring
 
 You can monitor app performance in Grafana dashboard
+
+1. Create dashboard by running `bash init_gr.sh`.
+2. As with streamlit switch to ports tab and click on link with port 3000 (🌐 icon).
+- Login: "admin"
+- Password: "admin"
+3. Click 'Dashboards' and choose 'Exam Assistant'
 
 ![Grafana dasboard](/screenshots/grafana.png)
 
 ### Best practices
-
+ * [x] Hybrid search: combining both text and vector search (Elastic search, encoding)
+ * [x] User query rewriting (adding context)
 
 ## Next steps
 
