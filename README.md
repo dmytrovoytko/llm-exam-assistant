@@ -87,6 +87,8 @@ Section helps to focus on specific parts of exam.
 4. Run `bash ollama_pull.sh` to pull phi3/phi3.5 Ollama models.
 ![Ollama pull](/screenshots/ollama_pulled.png)
 
+If you want to use other models, you can modify this script accordingly, then update `sl-app.py` to add your model names.
+
 5. Finally, open streamlit app: switch to ports tab and click on link with port 8501 (🌐 icon).
 
 ![Ports streamlit open](/screenshots/streamlit-open.png)
@@ -121,6 +123,11 @@ You can monitor app performance in Grafana dashboard
 3. Click 'Dashboards' in left pane and choose 'Exam Assistant'.
 
 ![Grafana dasboard](/screenshots/grafana.png)
+
+### :stop_sign: Stop all containers
+
+Run `docker compose down` in command line to stop all services.
+Don't forget to remove downloaded images if you experimented with project locally! 
 
 ### Best practices
  * [x] Hybrid search: combining both text and vector search (Elastic search, encoding)
